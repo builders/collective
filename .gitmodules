@@ -22,3 +22,66 @@
 [submodule "extensions/xssfilter"]
 	path = extensions/xssfilter
 	url = git://github.com/symphonycms/xssfilter.git
+[submodule "extensions/author_login"]
+	path = extensions/author_login
+	url = git://github.com/bauhouse/author_login.git
+[submodule "extensions/asdc"]
+	path = extensions/asdc
+	url = git://github.com/pointybeard/asdc.git
+[submodule "extensions/content_type_mappings"]
+	path = extensions/content_type_mappings
+	url = git://github.com/symphonycms/content_type_mappings.git
+[submodule "extensions/dump_db"]
+	path = extensions/dump_db
+	url = git://github.com/nils-werner/dump_db.git
+[submodule "extensions/dynamic_event_redirect"]
+	path = extensions/dynamic_event_redirect
+	url = git://github.com/makenosound/dynamic_event_redirect.git
+[submodule "extensions/edui"]
+	path = extensions/edui
+	url = git://github.com/eKoeS/edui.git
+[submodule "extensions/email_template_manager"]
+	path = extensions/email_template_manager
+	url = git://github.com/creativedutchmen/email_template_manager.git
+[submodule "extensions/entity_diagram"]
+	path = extensions/entity_diagram
+	url = git://github.com/nickdunn/entity_diagram.git
+[submodule "extensions/entry_url_field"]
+	path = extensions/entry_url_field
+	url = git://github.com/bauhouse/entry_url_field.git
+[submodule "extensions/forum"]
+	path = extensions/forum
+	url = git://github.com/bauhouse/forum.git
+[submodule "extensions/html5_doctype"]
+	path = extensions/html5_doctype
+	url = git://github.com/domain7/html5_doctype.git
+[submodule "extensions/members"]
+	path = extensions/members
+	url = git://github.com/symphonycms/members.git
+[submodule "extensions/members_openid"]
+	path = extensions/members_openid
+	url = git://github.com/domain7/members_openid.git
+[submodule "extensions/field_metakeys"]
+	path = extensions/field_metakeys
+	url = git://github.com/brendo/field_metakeys.git
+[submodule "extensions/numberfield"]
+	path = extensions/numberfield
+	url = git://github.com/symphonycms/numberfield.git
+[submodule "extensions/openid_auth"]
+	path = extensions/openid_auth
+	url = git://github.com/domain7/openid_auth.git
+[submodule "extensions/order_entries"]
+	path = extensions/order_entries
+	url = git://github.com/nickdunn/order_entries.git
+[submodule "extensions/publishfiltering"]
+	path = extensions/publishfiltering
+	url = git://github.com/nickdunn/publishfiltering.git
+[submodule "extensions/subsectionmanager"]
+	path = extensions/subsectionmanager
+	url = git://github.com/nilshoerrmann/subsectionmanager.git
+[submodule "extensions/readonly_mode"]
+	path = extensions/readonly_mode
+	url = git://github.com/nils-werner/readonly_mode.git
+[submodule "extensions/uniqueuploadfield"]
+	path = extensions/uniqueuploadfield
+	url = git://github.com/michael-e/uniqueuploadfield.git
