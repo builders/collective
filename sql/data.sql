@@ -10,7 +10,7 @@ CREATE TABLE `sym_cache` (
   PRIMARY KEY (`id`),
   KEY `hash` (`hash`),
   KEY `expiry` (`expiry`)
-) ENGINE=MyISAM AUTO_INCREMENT=101819 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- *** STRUCTURE: `sym_entries` ***
 DROP TABLE IF EXISTS `sym_entries`;
@@ -2163,8 +2163,6 @@ INSERT INTO `sym_extensions` (`id`, `name`, `status`, `version`) VALUES (32, 'or
 INSERT INTO `sym_extensions` (`id`, `name`, `status`, `version`) VALUES (33, 'edui', 'enabled', '0.6.1');
 INSERT INTO `sym_extensions` (`id`, `name`, `status`, `version`) VALUES (34, 'dump_db', 'enabled', 1.08);
 INSERT INTO `sym_extensions` (`id`, `name`, `status`, `version`) VALUES (46, 'author_login', 'enabled', 1.0);
-INSERT INTO `sym_extensions` (`id`, `name`, `status`, `version`) VALUES (49, 'openid_auth', 'enabled', 0.2);
-INSERT INTO `sym_extensions` (`id`, `name`, `status`, `version`) VALUES (54, 'members_openid', 'enabled', 0.2);
 INSERT INTO `sym_extensions` (`id`, `name`, `status`, `version`) VALUES (56, 'members', 'enabled', '1.1.1');
 INSERT INTO `sym_extensions` (`id`, `name`, `status`, `version`) VALUES (59, 'email_template_manager', 'enabled', 3.0);
 INSERT INTO `sym_extensions` (`id`, `name`, `status`, `version`) VALUES (61, 'entity_diagram', 'enabled', '1.4.5');
@@ -2221,9 +2219,7 @@ INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`
 INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (163, 34, '/system/preferences/', 'AddCustomPreferenceFieldsets', 'appendPreferences');
 INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (95, 46, '/frontend/', 'FrontendParamsResolve', 'addParamToPage');
 INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (96, 46, '/frontend/', 'FrontendProcessEvents', 'appendAuthorLoginToEventXML');
-INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (97, 49, '/frontend/', 'openidAuthComplete', 'authenticationComplete');
 INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (291, 53, '/frontend/', 'FrontendDevKitResolve', 'frontendDevKitResolve');
-INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (202, 54, '/frontend/', 'openidAuthComplete', 'authenticationComplete');
 INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (305, 31, '/frontend/', 'FrontendOutputPostGenerate', 'parse_html');
 INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (337, 56, '/backend/', 'AdminPagePreGenerate', 'appendAssets');
 INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (336, 56, '/frontend/', 'EventPostSaveFilter', 'processPostSaveFilter');
@@ -2693,7 +2689,7 @@ CREATE TABLE `sym_fields_select` (
   `static_options` text,
   `dynamic_options` int(11) unsigned DEFAULT NULL,
   `show_association` enum('yes','no') NOT NULL DEFAULT 'yes',
-  `sort_options` enum('yes','no') CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL DEFAULT 'no',
+  `sort_options` enum('yes','no') NOT NULL DEFAULT 'no',
   PRIMARY KEY (`id`),
   KEY `field_id` (`field_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
@@ -3425,22 +3421,22 @@ CREATE TABLE `sym_pages` (
 ) ENGINE=MyISAM AUTO_INCREMENT=50 DEFAULT CHARSET=utf8;
 
 -- *** DATA: `sym_pages` ***
-INSERT INTO `sym_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `data_sources`, `events`, `sortorder`) VALUES (1, NULL, 'Forum', 'forum', NULL, 'dpage', 'forum_discussions,forum_read_discussions,member_details,member_info,member_navigation', 'author_login,forum_utilities,openid_auth,openid_data,openid_logout', 15);
-INSERT INTO `sym_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `data_sources`, `events`, `sortorder`) VALUES (2, 1, 'Filter', 'forum-filter', 'forum', 'dpage', 'forum_discussions_filtered,forum_read_discussions,member_info,member_navigation', 'forum_utilities,openid_auth,openid_data,openid_logout', 10);
-INSERT INTO `sym_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `data_sources`, `events`, `sortorder`) VALUES (3, 1, 'Discussions', 'discussions', 'forum', 'discussion-id/cpage', 'forum_comments,forum_discussion_subscriber,forum_discussion_subscribers,forum_discussions,forum_members,forum_subscription_members,member_info,member_navigation', 'author_login,forum_post,forum_utilities,openid_auth,openid_data,openid_logout', 11);
-INSERT INTO `sym_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `data_sources`, `events`, `sortorder`) VALUES (4, 3, 'New Discussion', 'new', 'forum/discussions', NULL, 'member_info,member_navigation', 'forum_post,forum_utilities,openid_auth,openid_data,openid_logout', 12);
-INSERT INTO `sym_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `data_sources`, `events`, `sortorder`) VALUES (5, 3, 'Edit Discussion', 'edit-discussion', 'forum/discussions', 'discussion-id', 'forum_discussions,forum_edit_discussion_comment,member_info,member_navigation', 'forum_post,openid_auth,openid_data,openid_logout', 13);
-INSERT INTO `sym_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `data_sources`, `events`, `sortorder`) VALUES (6, 3, 'Edit Comment', 'edit-comment', 'forum/discussions', 'comment-id/cpage/position', 'forum_edit_comment,member_info,member_navigation', 'forum_post,openid_auth,openid_data,openid_logout', 14);
+INSERT INTO `sym_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `data_sources`, `events`, `sortorder`) VALUES (1, NULL, 'Forum', 'forum', NULL, 'dpage', 'forum_discussions,forum_read_discussions,member_details,member_info,member_navigation', 'author_login,forum_utilities', 15);
+INSERT INTO `sym_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `data_sources`, `events`, `sortorder`) VALUES (2, 1, 'Filter', 'forum-filter', 'forum', 'dpage', 'forum_discussions_filtered,forum_read_discussions,member_info,member_navigation', 'forum_utilities', 10);
+INSERT INTO `sym_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `data_sources`, `events`, `sortorder`) VALUES (3, 1, 'Discussions', 'discussions', 'forum', 'discussion-id/cpage', 'forum_comments,forum_discussion_subscriber,forum_discussion_subscribers,forum_discussions,forum_members,forum_subscription_members,member_info,member_navigation', 'author_login,forum_post,forum_utilities', 11);
+INSERT INTO `sym_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `data_sources`, `events`, `sortorder`) VALUES (4, 3, 'New Discussion', 'new', 'forum/discussions', NULL, 'member_info,member_navigation', 'forum_post,forum_utilities', 12);
+INSERT INTO `sym_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `data_sources`, `events`, `sortorder`) VALUES (5, 3, 'Edit Discussion', 'edit-discussion', 'forum/discussions', 'discussion-id', 'forum_discussions,forum_edit_discussion_comment,member_info,member_navigation', 'forum_post', 13);
+INSERT INTO `sym_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `data_sources`, `events`, `sortorder`) VALUES (6, 3, 'Edit Comment', 'edit-comment', 'forum/discussions', 'comment-id/cpage/position', 'forum_edit_comment,member_info,member_navigation', 'forum_post', 14);
 INSERT INTO `sym_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `data_sources`, `events`, `sortorder`) VALUES (7, 1, 'Code Source', 'code-source', 'forum', 'comment-id/position', 'forum_code_source', NULL, 15);
-INSERT INTO `sym_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `data_sources`, `events`, `sortorder`) VALUES (8, NULL, 'Members', 'members', NULL, 'member', 'member_info,member_navigation,member_username', 'openid_auth,openid_data,openid_logout', 20);
-INSERT INTO `sym_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `data_sources`, `events`, `sortorder`) VALUES (9, 8, 'New', 'new', 'members', NULL, 'member_info,member_navigation,location,timezones', 'members_register,openid_auth,openid_data,openid_logout', 26);
-INSERT INTO `sym_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `data_sources`, `events`, `sortorder`) VALUES (10, 8, 'Edit', 'edit', 'members', NULL, 'member_info,member_navigation,location,timezones', 'edit_member,openid_auth,openid_data,openid_logout', 27);
-INSERT INTO `sym_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `data_sources`, `events`, `sortorder`) VALUES (11, 8, 'Activate', 'activate', 'members', 'code/email', 'member_info,member_navigation', 'members_activate_account,members_regenerate_activation_code,openid_auth,openid_data,openid_logout', 28);
-INSERT INTO `sym_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `data_sources`, `events`, `sortorder`) VALUES (12, 8, 'Reset Password', 'reset-pass', 'members', 'mode/email', 'member_info,member_navigation', 'members_generate_recovery_code,members_reset_password,openid_auth,openid_data,openid_logout', 29);
-INSERT INTO `sym_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `data_sources`, `events`, `sortorder`) VALUES (13, 8, 'Change Password', 'change-pass', 'members', NULL, 'member_info,member_navigation', 'members_update_password,openid_auth,openid_data,openid_logout', 30);
-INSERT INTO `sym_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `data_sources`, `events`, `sortorder`) VALUES (14, NULL, 'Forbidden', 'forbidden', NULL, NULL, 'navigation', 'openid_auth,openid_data,openid_logout', 8);
-INSERT INTO `sym_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `data_sources`, `events`, `sortorder`) VALUES (15, NULL, 'Page Not Found', 'page-not-found', NULL, NULL, 'navigation', 'openid_auth,openid_data,openid_logout', 9);
-INSERT INTO `sym_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `data_sources`, `events`, `sortorder`) VALUES (16, NULL, 'Dashboard', 'dashboard', NULL, 'action/list/item', 'author_details,dashboard,links_list,lists,member_details,member_info,member_navigation,news_archive,news_categories,news_tags,news_topics,topics', 'author_login,openid_auth,openid_data,openid_logout', 12);
+INSERT INTO `sym_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `data_sources`, `events`, `sortorder`) VALUES (8, NULL, 'Members', 'members', NULL, 'member', 'member_info,member_navigation,member_username', NULL, 20);
+INSERT INTO `sym_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `data_sources`, `events`, `sortorder`) VALUES (9, 8, 'New', 'new', 'members', NULL, 'location,member_info,member_navigation,timezones', 'members_register', 26);
+INSERT INTO `sym_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `data_sources`, `events`, `sortorder`) VALUES (10, 8, 'Edit', 'edit', 'members', NULL, 'location,member_info,member_navigation,timezones', 'edit_member', 27);
+INSERT INTO `sym_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `data_sources`, `events`, `sortorder`) VALUES (11, 8, 'Activate', 'activate', 'members', 'code/email', 'member_info,member_navigation', 'members_activate_account,members_regenerate_activation_code', 28);
+INSERT INTO `sym_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `data_sources`, `events`, `sortorder`) VALUES (12, 8, 'Reset Password', 'reset-pass', 'members', 'mode/email', 'member_info,member_navigation', 'members_generate_recovery_code,members_reset_password', 29);
+INSERT INTO `sym_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `data_sources`, `events`, `sortorder`) VALUES (13, 8, 'Change Password', 'change-pass', 'members', NULL, 'member_info,member_navigation', 'members_update_password', 30);
+INSERT INTO `sym_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `data_sources`, `events`, `sortorder`) VALUES (14, NULL, 'Forbidden', 'forbidden', NULL, NULL, 'navigation', NULL, 8);
+INSERT INTO `sym_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `data_sources`, `events`, `sortorder`) VALUES (15, NULL, 'Page Not Found', 'page-not-found', NULL, NULL, 'navigation', NULL, 9);
+INSERT INTO `sym_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `data_sources`, `events`, `sortorder`) VALUES (16, NULL, 'Dashboard', 'dashboard', NULL, 'action/list/item', 'author_details,dashboard,links_list,lists,member_details,member_info,member_navigation,news_archive,news_categories,news_tags,news_topics,topics', 'author_login', 12);
 INSERT INTO `sym_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `data_sources`, `events`, `sortorder`) VALUES (17, NULL, 'Home', 'home', NULL, NULL, 'articles_home,articles_latest,flickr,latest_work,navigation,twitter', 'add_to_mailing_list', 1);
 INSERT INTO `sym_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `data_sources`, `events`, `sortorder`) VALUES (18, NULL, 'Team', 'team', NULL, 'team-member', 'articles_team,flickr,latest_articles,member,navigation,team_profile,team_snapshot,twitter,twitter_team', 'add_to_mailing_list', 3);
 INSERT INTO `sym_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `data_sources`, `events`, `sortorder`) VALUES (19, NULL, 'Projects', 'projects', NULL, 'project', 'industry_sectors,navigation,project_types,work,work_project', 'add_to_mailing_list', 2);
@@ -3449,21 +3445,21 @@ INSERT INTO `sym_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `d
 INSERT INTO `sym_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `data_sources`, `events`, `sortorder`) VALUES (22, NULL, 'Contact', 'contact', NULL, NULL, 'navigation', 'add_to_mailing_list,send_message', 6);
 INSERT INTO `sym_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `data_sources`, `events`, `sortorder`) VALUES (23, 19, 'Project', 'project', 'projects', 'type', 'industry_sectors,navigation,project_types,work_by_type', 'add_to_mailing_list', 35);
 INSERT INTO `sym_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `data_sources`, `events`, `sortorder`) VALUES (24, 19, 'Industry', 'industry', 'projects', 'sector', 'industry_sectors,navigation,project_types,work_by_industry', 'add_to_mailing_list', 36);
-INSERT INTO `sym_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `data_sources`, `events`, `sortorder`) VALUES (25, NULL, 'Login', 'login', NULL, NULL, 'member_info,member_navigation', 'openid_auth,openid_data,openid_logout', 19);
-INSERT INTO `sym_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `data_sources`, `events`, `sortorder`) VALUES (26, NULL, 'Resources', 'resources', NULL, 'a/b/c', 'author_details,images,member_info,member_navigation,resource,resource_by_id,resource_latest,resources,resources_by_date,topics', 'author_login,download_file,openid_auth,openid_data,openid_logout,save_resource', 16);
-INSERT INTO `sym_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `data_sources`, `events`, `sortorder`) VALUES (27, NULL, 'News', 'news', NULL, 'article/category/page', 'author_details,member_info,member_navigation,news_archive,news_article,news_article_avatars,news_by_category,news_by_id,news_categories,news_comments,news_latest,news_pages,news_tags,news_topics,topics', 'author_login,email_news_post,openid_auth,openid_data,openid_logout,save_news,save_note', 13);
-INSERT INTO `sym_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `data_sources`, `events`, `sortorder`) VALUES (28, NULL, 'People', 'people', NULL, 'team-member', 'articles_team,latest_articles,member,member_info,member_navigation,people,team_profile,twitter,twitter_team', 'author_login,openid_auth,openid_data,openid_logout', 14);
+INSERT INTO `sym_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `data_sources`, `events`, `sortorder`) VALUES (25, NULL, 'Login', 'login', NULL, NULL, 'member_info,member_navigation', NULL, 19);
+INSERT INTO `sym_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `data_sources`, `events`, `sortorder`) VALUES (26, NULL, 'Resources', 'resources', NULL, 'a/b/c', 'author_details,images,member_info,member_navigation,resource,resource_by_id,resource_latest,resources,resources_by_date,topics', 'author_login,download_file,save_resource', 16);
+INSERT INTO `sym_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `data_sources`, `events`, `sortorder`) VALUES (27, NULL, 'News', 'news', NULL, 'article/category/page', 'author_details,member_info,member_navigation,news_archive,news_article,news_article_avatars,news_by_category,news_by_id,news_categories,news_comments,news_latest,news_pages,news_tags,news_topics,topics', 'author_login,email_news_post,save_news,save_note', 13);
+INSERT INTO `sym_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `data_sources`, `events`, `sortorder`) VALUES (28, NULL, 'People', 'people', NULL, 'team-member', 'articles_team,latest_articles,member,member_info,member_navigation,people,team_profile,twitter,twitter_team', 'author_login', 14);
 INSERT INTO `sym_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `data_sources`, `events`, `sortorder`) VALUES (29, NULL, 'Maintenance', 'maintenance', NULL, NULL, NULL, NULL, 10);
-INSERT INTO `sym_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `data_sources`, `events`, `sortorder`) VALUES (30, NULL, 'Lists', 'lists', NULL, 'action/list/item', 'items,lists,member_details,member_info,member_navigation', 'author_login,openid_auth,openid_data,openid_logout,save_item,save_items,save_list,save_lists', 18);
-INSERT INTO `sym_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `data_sources`, `events`, `sortorder`) VALUES (31, 26, 'Resources by Tag', 'tag', 'resources', 'tag', 'member_info,member_navigation,resources,resources_by_tag,topics', 'openid_auth,openid_data,openid_logout,save_resource', 17);
-INSERT INTO `sym_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `data_sources`, `events`, `sortorder`) VALUES (32, 26, 'Resources by Topic', 'topic', 'resources', 'topic', 'member_info,member_navigation,resources,resources_by_topic,topics', 'author_login,openid_auth,openid_data,openid_logout', 18);
-INSERT INTO `sym_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `data_sources`, `events`, `sortorder`) VALUES (33, 26, 'Updated', 'updated', 'resources', 'year/month', 'member_info,member_navigation,resources_by_date', 'author_login,openid_auth,openid_data,openid_logout', 19);
-INSERT INTO `sym_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `data_sources`, `events`, `sortorder`) VALUES (34, 27, 'Archive', 'archive', 'news', 'year/month', 'member_info,member_navigation,news_archive,news_by_date,news_tags,news_topics', 'author_login,openid_auth,openid_data,openid_logout', 6);
-INSERT INTO `sym_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `data_sources`, `events`, `sortorder`) VALUES (35, 26, 'Topics', 'topics', 'resources', 'entry/action/result', 'author_details,member_info,member_navigation,topic_by_id,topic_latest,topics', 'author_login,openid_auth,openid_data,openid_logout,save_topic', 20);
-INSERT INTO `sym_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `data_sources`, `events`, `sortorder`) VALUES (37, NULL, 'Links', 'links', NULL, 'a/b/c', 'author_details,link,link_by_id,link_latest,links,member_info,member_names,member_navigation', 'author_login,openid_auth,openid_data,openid_logout,save_link', 17);
-INSERT INTO `sym_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `data_sources`, `events`, `sortorder`) VALUES (39, 37, 'Links by Tag', 'tag', 'links', 'tag', 'links,links_by_tag,member_info,member_navigation', 'author_login,openid_auth,openid_data,openid_logout', 22);
-INSERT INTO `sym_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `data_sources`, `events`, `sortorder`) VALUES (41, 27, 'News by Tag', 'tag', 'news', 'tag', 'member_info,member_navigation,news_archive,news_by_tag,news_tags,news_topics', 'author_login,openid_auth,openid_data,openid_logout', 7);
-INSERT INTO `sym_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `data_sources`, `events`, `sortorder`) VALUES (43, NULL, 'OpenID', 'openid', NULL, NULL, 'member_navigation', 'author_login,openid_auth,openid_data', 21);
+INSERT INTO `sym_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `data_sources`, `events`, `sortorder`) VALUES (30, NULL, 'Lists', 'lists', NULL, 'action/list/item', 'items,lists,member_details,member_info,member_navigation', 'author_login,save_item,save_items,save_list,save_lists', 18);
+INSERT INTO `sym_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `data_sources`, `events`, `sortorder`) VALUES (31, 26, 'Resources by Tag', 'tag', 'resources', 'tag', 'member_info,member_navigation,resources,resources_by_tag,topics', 'save_resource', 17);
+INSERT INTO `sym_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `data_sources`, `events`, `sortorder`) VALUES (32, 26, 'Resources by Topic', 'topic', 'resources', 'topic', 'member_info,member_navigation,resources,resources_by_topic,topics', 'author_login', 18);
+INSERT INTO `sym_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `data_sources`, `events`, `sortorder`) VALUES (33, 26, 'Updated', 'updated', 'resources', 'year/month', 'member_info,member_navigation,resources_by_date', 'author_login', 19);
+INSERT INTO `sym_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `data_sources`, `events`, `sortorder`) VALUES (34, 27, 'Archive', 'archive', 'news', 'year/month', 'member_info,member_navigation,news_archive,news_by_date,news_tags,news_topics', 'author_login', 6);
+INSERT INTO `sym_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `data_sources`, `events`, `sortorder`) VALUES (35, 26, 'Topics', 'topics', 'resources', 'entry/action/result', 'author_details,member_info,member_navigation,topic_by_id,topic_latest,topics', 'author_login,save_topic', 20);
+INSERT INTO `sym_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `data_sources`, `events`, `sortorder`) VALUES (37, NULL, 'Links', 'links', NULL, 'a/b/c', 'author_details,link,link_by_id,link_latest,links,member_info,member_names,member_navigation', 'author_login,save_link', 17);
+INSERT INTO `sym_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `data_sources`, `events`, `sortorder`) VALUES (39, 37, 'Links by Tag', 'tag', 'links', 'tag', 'links,links_by_tag,member_info,member_navigation', 'author_login', 22);
+INSERT INTO `sym_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `data_sources`, `events`, `sortorder`) VALUES (41, 27, 'News by Tag', 'tag', 'news', 'tag', 'member_info,member_navigation,news_archive,news_by_tag,news_tags,news_topics', 'author_login', 7);
+INSERT INTO `sym_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `data_sources`, `events`, `sortorder`) VALUES (43, NULL, 'OpenID', 'openid', NULL, NULL, 'member_navigation', 'author_login', 21);
 INSERT INTO `sym_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `data_sources`, `events`, `sortorder`) VALUES (45, NULL, 'RSS', 'rss', NULL, NULL, 'rss_articles', NULL, 11);
 INSERT INTO `sym_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `data_sources`, `events`, `sortorder`) VALUES (47, 21, 'Drafts', 'drafts', 'blog', 'article/category/page', 'article_avatars,articles_by_category,articles_drafts,articles_pages,categories,flickr_thumbnails,navigation,twitter', 'publish_article', 39);
 INSERT INTO `sym_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `data_sources`, `events`, `sortorder`) VALUES (49, NULL, 'Jobs', 'jobs', NULL, 'article/category/page', 'categories,flickr_thumbnails,jobs,navigation,twitter', NULL, 7);
@@ -3476,32 +3472,32 @@ CREATE TABLE `sym_pages_types` (
   `type` varchar(50) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `page_id` (`page_id`,`type`)
-) ENGINE=MyISAM AUTO_INCREMENT=318 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=333 DEFAULT CHARSET=utf8;
 
 -- *** DATA: `sym_pages_types` ***
 INSERT INTO `sym_pages_types` (`id`, `page_id`, `type`) VALUES (305, 7, 'text');
-INSERT INTO `sym_pages_types` (`id`, `page_id`, `type`) VALUES (297, 14, 403);
-INSERT INTO `sym_pages_types` (`id`, `page_id`, `type`) VALUES (277, 15, 404);
-INSERT INTO `sym_pages_types` (`id`, `page_id`, `type`) VALUES (299, 26, 'member');
+INSERT INTO `sym_pages_types` (`id`, `page_id`, `type`) VALUES (318, 14, 403);
+INSERT INTO `sym_pages_types` (`id`, `page_id`, `type`) VALUES (319, 15, 404);
+INSERT INTO `sym_pages_types` (`id`, `page_id`, `type`) VALUES (324, 26, 'member');
 INSERT INTO `sym_pages_types` (`id`, `page_id`, `type`) VALUES (56, 18, 'main');
 INSERT INTO `sym_pages_types` (`id`, `page_id`, `type`) VALUES (309, 21, 'main');
 INSERT INTO `sym_pages_types` (`id`, `page_id`, `type`) VALUES (315, 19, 'main');
 INSERT INTO `sym_pages_types` (`id`, `page_id`, `type`) VALUES (314, 20, 'main');
 INSERT INTO `sym_pages_types` (`id`, `page_id`, `type`) VALUES (61, 22, 'main');
-INSERT INTO `sym_pages_types` (`id`, `page_id`, `type`) VALUES (312, 16, 'member');
-INSERT INTO `sym_pages_types` (`id`, `page_id`, `type`) VALUES (307, 27, 'member');
-INSERT INTO `sym_pages_types` (`id`, `page_id`, `type`) VALUES (262, 28, 'member');
-INSERT INTO `sym_pages_types` (`id`, `page_id`, `type`) VALUES (281, 1, 'member');
+INSERT INTO `sym_pages_types` (`id`, `page_id`, `type`) VALUES (320, 16, 'member');
+INSERT INTO `sym_pages_types` (`id`, `page_id`, `type`) VALUES (321, 27, 'member');
+INSERT INTO `sym_pages_types` (`id`, `page_id`, `type`) VALUES (322, 28, 'member');
+INSERT INTO `sym_pages_types` (`id`, `page_id`, `type`) VALUES (323, 1, 'member');
 INSERT INTO `sym_pages_types` (`id`, `page_id`, `type`) VALUES (99, 29, 'hidden');
 INSERT INTO `sym_pages_types` (`id`, `page_id`, `type`) VALUES (101, 29, 'maintenance');
-INSERT INTO `sym_pages_types` (`id`, `page_id`, `type`) VALUES (265, 31, 'member');
-INSERT INTO `sym_pages_types` (`id`, `page_id`, `type`) VALUES (266, 32, 'member');
-INSERT INTO `sym_pages_types` (`id`, `page_id`, `type`) VALUES (267, 33, 'member');
-INSERT INTO `sym_pages_types` (`id`, `page_id`, `type`) VALUES (289, 34, 'member');
-INSERT INTO `sym_pages_types` (`id`, `page_id`, `type`) VALUES (268, 35, 'member');
-INSERT INTO `sym_pages_types` (`id`, `page_id`, `type`) VALUES (269, 37, 'member');
-INSERT INTO `sym_pages_types` (`id`, `page_id`, `type`) VALUES (270, 39, 'member');
-INSERT INTO `sym_pages_types` (`id`, `page_id`, `type`) VALUES (291, 41, 'member');
+INSERT INTO `sym_pages_types` (`id`, `page_id`, `type`) VALUES (328, 31, 'member');
+INSERT INTO `sym_pages_types` (`id`, `page_id`, `type`) VALUES (329, 32, 'member');
+INSERT INTO `sym_pages_types` (`id`, `page_id`, `type`) VALUES (331, 33, 'member');
+INSERT INTO `sym_pages_types` (`id`, `page_id`, `type`) VALUES (326, 34, 'member');
+INSERT INTO `sym_pages_types` (`id`, `page_id`, `type`) VALUES (330, 35, 'member');
+INSERT INTO `sym_pages_types` (`id`, `page_id`, `type`) VALUES (325, 37, 'member');
+INSERT INTO `sym_pages_types` (`id`, `page_id`, `type`) VALUES (332, 39, 'member');
+INSERT INTO `sym_pages_types` (`id`, `page_id`, `type`) VALUES (327, 41, 'member');
 INSERT INTO `sym_pages_types` (`id`, `page_id`, `type`) VALUES (235, 45, 'XML');
 INSERT INTO `sym_pages_types` (`id`, `page_id`, `type`) VALUES (233, 45, 'hidden');
 INSERT INTO `sym_pages_types` (`id`, `page_id`, `type`) VALUES (316, 17, 'index');
