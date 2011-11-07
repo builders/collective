@@ -1,0 +1,1821 @@
+/*
+==================================================
+Site Name
+==================================================
+Content Styles
+--------------------------------------------------
+file:     content.css
+version:  1.0
+date:     2 March 2011
+author:   Author Name
+agency:   Organization
+url:      http://example.com
+--------------------------------------------------
+
+
+--------------------------------------------------
+Table of Contents
+--------------------------------------------------
+
+
+      CONTENT STYLES
+      --------------------------------------------
+
+         1  ELEMENTS
+             1.1  Root Element
+             1.2  Text-Level Semantics
+                   1.2.1  Anchors
+                   1.2.2  Modifiers
+             1.3  Grouping Content
+             1.4  Forms
+             1.5  Document Sections
+             1.6  Tabular Data
+             1.7  Embedding Content
+             1.8  Interactive Elements
+         2  TYPOGRAPHY
+             2.1  Fonts
+             2.2  Headings
+             2.3  Anchors
+             2.4  Lists
+                   2.4.1  List Classes
+             2.5  Tables
+             2.6  Miscellaneous
+                   2.6.1  Blockquotes
+                   2.6.2  Images
+                   2.6.3  Code
+         4  LAYOUT
+             4.1  Default Page Structure
+             4.2  Clearing
+         5  CONTENT
+             5.1  Images
+             5.2  Navigation
+                   5.2.1  Horizontal Navigation
+                   5.2.2  Vertical Subnavigation
+                   5.2.3  Main Navigation Extension
+                   5.2.4  Button Navigation
+             5.3  Menus
+                   5.3.1  Menus and Lists
+                   5.3.2  Main Menu
+                   5.3.3  List Menu / Section Menu
+                   5.3.4  Menu Buttons
+                   5.3.5  Status Menu
+             5.4  Main Content
+                   5.4.1  Main
+                   5.4.2  List Profiles
+                   5.4.3  Small Profiles
+                   5.4.4  Articles
+                   5.4.5  Articles and Events
+                   5.4.6  Images
+                   5.4.7  Links
+                   5.4.8  Media
+                   5.4.9  Intro Paragraphs
+                   5.4.10  Action Buttons
+                   5.4.11  Filter Buttons
+             5.5  jQuery Tools Scrollable Slideshow
+                   5.5.1  Scrollable Items
+                   5.5.2  Feature Items
+                   5.5.3  Slideshow Navigator
+                   5.5.4  Navigation
+             5.6  Sections
+                   5.6.1  Secondary Section
+             5.7  Site Info
+                   5.7.1  Site Information
+             5.8  Forms
+                   5.8.1  Basic Form
+                   5.8.2  Tags
+                   5.8.3  Validation Messages
+                   5.8.4  Label
+                   5.8.5  File
+         6  COLORS
+             6.1  Anchors
+         7  BRANDING
+             7.1  Logo
+             7.2  Site Branding
+
+
+--------------------------------------------------
+*/
+
+
+
+
+
+/*
+==================================================
+
+1  ELEMENTS
+
+==================================================
+*/
+
+/*
+http://joshduck.com/periodic-table.html
+*/
+
+
+/*
+--------------------------------------------------
+1.1  Root Element
+-------------------------------------------------- */
+
+
+/*
+--------------------------------------------------
+1.2  Text-Level Semantics
+-------------------------------------------------- */
+
+
+/* 1.2.1  Anchors
+-------------------------------------------------- */
+a {
+	text-decoration: none;
+}
+
+
+/* 1.2.2  Modifiers
+-------------------------------------------------- */
+strong {
+	font-weight: bold;
+}
+em {
+	font-style: italic;
+}
+
+
+/*
+--------------------------------------------------
+1.3  Grouping Content
+-------------------------------------------------- */
+p,
+dl,
+hr,
+ol,
+ul,
+pre,
+table,
+address,
+fieldset {
+	margin-bottom: 20px;
+}
+hr
+{
+	border-color: #ddd;
+	border-style: solid;
+	border-width: 1px 0 0;
+	height: 0;
+}
+
+
+/*
+--------------------------------------------------
+1.4  Forms
+-------------------------------------------------- */
+
+
+/*
+--------------------------------------------------
+1.5  Document Sections
+-------------------------------------------------- */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+
+/*
+--------------------------------------------------
+1.6  Tabular Data
+-------------------------------------------------- */
+table {
+	width: 100%;
+}
+th,
+td {
+	padding: .5em 1em;
+	background: #eee;
+	color: #666;
+	border: 1px solid #fff;
+	text-align: left;
+}
+td {
+	vertical-align: top;
+}
+th {
+	background: #ddd;
+	color: #444;
+	font-weight: bold;
+}
+
+
+/*
+--------------------------------------------------
+1.7  Embedding Content
+-------------------------------------------------- */
+
+
+/* 1.7.1  Images
+-------------------------------------------------- */
+img {
+	border: none;
+	display: block;
+}
+
+
+
+/*
+==================================================
+
+2  TYPOGRAPHY
+
+==================================================
+*/
+
+
+/*
+--------------------------------------------------
+2.1  Fonts
+-------------------------------------------------- */
+body {
+	font: normal 75%/1.5em helvetica, arial, sans-serif;
+	color: #666;
+}
+
+
+/*
+--------------------------------------------------
+2.2  Headings
+-------------------------------------------------- */
+h1 {font-size: 2.6em;}
+h2 {font-size: 2.2em;}
+h3 {font-size: 1.8em;}
+h4 {font-size: 1.6em;}
+h5 {font-size: 1.4em;}
+h6 {font-size: 1.2em;}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: normal;
+	margin-bottom: .5em;
+	line-height: 1.2em;
+	color: #000;
+}
+
+
+/*
+--------------------------------------------------
+2.3  Anchors
+-------------------------------------------------- */
+a.button.add {
+	float: right;
+	background: #eee;
+	width: 30px;
+	height: 30px;
+	margin-top: -4px;
+	font-weight: bold;
+	line-height: 28px;
+	text-align: center;
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+}
+a.button.add:hover {
+	color: #fff;
+	background: #2a8cc8;
+}
+
+
+/*
+--------------------------------------------------
+2.4  Lists
+-------------------------------------------------- */
+ol {
+	list-style: decimal;
+}
+
+ul {
+	list-style: square;
+}
+
+li {
+	margin-left: 24px;
+}
+ul li {
+	list-style-type: disc;
+}
+ol li {
+	list-style-type: decimal;
+}
+ul li li {
+	list-style-type: circle;
+}
+ul ul,
+ol ul {
+	margin-bottom: 0;
+}
+
+
+/* 2.4.1  List Classes
+-------------------------------------------------- */
+ul.item-list li {
+	margin-left: 24px;
+	list-style-image: url("../img/a_post.gif");
+}
+ul.categories-list li {
+	margin-left: 24px;
+	list-style-image: url("../img/a_category.gif");
+}
+
+
+/*
+--------------------------------------------------
+2.5  Tables
+-------------------------------------------------- */
+
+
+/*
+--------------------------------------------------
+2.6  Miscellaneous
+-------------------------------------------------- */
+
+
+/* 2.6.1  Blockquotes
+-------------------------------------------------- */
+blockquote {
+	border-left: 5px solid #ddd;
+	background-color: #eee;
+	padding: .5em .5em;
+	margin-bottom: 1em;
+}
+blockquote p:last-child {
+	margin-bottom: 0;
+}
+
+
+/* 2.6.2  Images
+-------------------------------------------------- */
+.image-a {
+	float: left;
+	margin-right: 20px;
+}
+.image-b {
+	float: right;
+	margin-left: 20px;
+}
+
+
+/* 2.6.3  Code
+-------------------------------------------------- */
+pre {
+	white-space: normal;
+	padding: 1em 1.5em;
+	border: 1px solid #ddd;
+	background-color: #eee;
+	word-wrap: break-word;
+}
+code {
+	white-space: pre;
+	font-size: 1.2em;
+	color: #000;
+}
+
+
+
+
+/*
+==================================================
+
+4  LAYOUT
+
+==================================================
+*/
+
+
+/*
+--------------------------------------------------
+4.1  Default Page Structure
+-------------------------------------------------- */
+
+
+
+/*
+--------------------------------------------------
+4.2  Clearing
+-------------------------------------------------- */
+
+/*
+http://www.positioniseverything.net/easyclearing.html
+*/
+
+.header:after,
+.nav:after,
+.media:after,
+.profile:after,
+.filters:after,
+.profiles:after,
+.profile-details:after,
+p.button:after,
+.list-menu:after,
+.section-menu:after,
+.excerpt:after,
+.clearfix:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+.header,
+.nav,
+.media,
+.profile,
+.filters,
+.profiles,
+.profile-details,
+p.button,
+.list-menu,
+.section-menu,
+.excerpt,
+.clearfix {
+	zoom: 1;
+	display: block;
+}
+
+
+
+
+/*
+==================================================
+
+5  CONTENT
+
+==================================================
+*/
+
+
+/*
+--------------------------------------------------
+5.1  Images
+-------------------------------------------------- */
+figure a {
+	display: block;
+	vertical-align: bottom;
+}
+figcaption {
+	padding: 1em 1.5em;
+	background: #666;
+	color: #fff;
+	margin-bottom: 36px;
+}
+.image-a {
+	float: left;
+	margin-right: 18px;
+	margin-bottom: 12px;
+}
+.image-b {
+	float: right;
+	margin-left: 18px;
+	margin-bottom: 12px;
+}
+.image-c {
+	display: block;
+	margin: 18px auto;
+}
+.normalize {
+	margin: 0;
+	padding: 0;
+}
+
+
+/*
+--------------------------------------------------
+5.2  Navigation
+-------------------------------------------------- */
+
+
+/* 5.2.1  Horizontal Navigation
+-------------------------------------------------- */
+.nav {
+	white-space: nowrap;
+	list-style: none;
+	margin-bottom: 0;
+}
+.nav li {
+	float: left;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.nav ul {
+	margin: 0;
+	padding-left: 0;
+	text-transform: none;
+	line-height: 2.5;
+	border-top
+}
+.nav a {
+	float: left;
+	padding: .5em 1em;
+	text-decoration: none;
+}
+
+
+/* 5.2.2  Vertical Subnavigation
+-------------------------------------------------- */
+.nav li:hover ul {
+	display: block;
+}
+.nav li ul li {
+	clear: both;
+}
+.nav li ul li a {
+	padding: 0 1em;
+}
+
+
+/* 5.2.3	Main Navigation Extension
+-------------------------------------------------- */
+.main-nav {
+	margin: 0 15px;
+	border-top: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+}
+.main-nav li {
+	font-weight: bold;
+}
+.main-nav a {
+	border-top: 2px solid white;
+	padding-bottom: .6em;
+}
+.main-nav a:hover {
+	border-top-color: #333;
+	background: #eee;
+	color: #000;
+}
+.main-nav a:active {
+	border-top-color: #666;
+	background: #666;
+	color: #fff;
+}
+.main-nav a.current,
+.main-nav a.current:link,
+.main-nav a.current:visited,
+.main-nav a.current:hover {
+	border-top-color: #000;
+	color: #fff;
+	background: #000;
+}
+li.search {
+	float: right;
+	width: 290px;
+	margin-top: 4px;
+}
+li.search input {
+	color: #999;
+	width: 290px;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+li.search input:focus {
+	color: #000;
+}
+
+
+/* 5.2.4 Button Navigation
+----------------------------------------------- */
+.button-nav {
+	margin-bottom: 12px;
+}
+.button-nav li {
+	margin-right: 2px;
+	margin-bottom: 2px;
+}
+.button-nav li a {
+	background: #eee;
+	color: #000;
+	padding: .5em .7em;
+}
+.button-nav li a:hover {
+	background: #999;
+	color: #fff;
+}
+.button-nav li a:active {
+	background: #000;
+	color: #fff;
+}
+.button-nav li a.current,
+.button-nav li a.current:hover {
+	background: #000;
+	color: #fff;
+}
+
+
+/*
+--------------------------------------------------
+5.3  Menus
+-------------------------------------------------- */
+
+
+/* 5.3.1  Menus and Lists
+-------------------------------------------------- */
+.list li,
+.menu li {
+	margin-left: 0;
+	list-style-type: none;
+}
+
+
+/* 5.3.2  Header Menu
+-------------------------------------------------- */
+.header {
+	background: #eee;
+	border-bottom: 1px solid #ddd;
+}
+.header .nav {
+	padding: .2em 15px;
+}
+.header .nav li a {
+	padding-left: 0;
+	padding-right: 1.5em;
+}
+.user {
+	float: right;
+	width: 290px;
+}
+.user li a {
+	color: #999;
+}
+.user li a:hover {
+	color: #000;
+}
+.user a.current {
+	color: #000;
+	font-weight: bold;
+	cursor: default;
+}
+
+
+/* 5.3.3  List Menu / Section Menu
+-------------------------------------------------- */
+.list-menu,
+.section-menu {
+	margin-top: 4px;
+	margin-bottom: 18px;
+	border-bottom: 1px solid #eee;
+}
+#news-summaries .list-menu {
+	margin-bottom: 0;
+}
+.list-menu li,
+.section-menu li {
+	margin-left: 0;
+	border-top: 1px solid #eee;
+	float: left;
+	width: 100%;
+}
+.list-menu li a,
+.section-menu li a {
+	padding: 0;
+	display: block;
+}
+.list-menu li a.current,
+.section-menu li a.current {
+	font-weight: bold;
+	padding: 0 .5em;
+	color: #fff;
+	background: #000;
+}
+
+.section-menu li a,
+.section-menu li a.current {
+	padding: .3em .7em;
+}
+
+
+/* 5.3.4  List Articles
+-------------------------------------------------- */
+.list-articles {
+	margin-bottom: 0;
+}
+.list-articles li {
+	padding: .5em 0;
+}
+.list-articles h6 {
+	font-size: 1em;
+	font-weight: bold;
+	margin-bottom: 0;
+}
+.list-articles .meta {
+	font-size: .9em;
+	padding: 0;
+	margin: 0;
+}
+
+
+/* 5.3.5  List Events
+-------------------------------------------------- */
+.list-events {
+	margin-bottom: 0;
+}
+.list-events li {
+	padding: 9px 0;
+}
+.list-events li a {
+	padding: 0;
+}
+.list-events li h6,
+.list-events li p {
+	margin-bottom: 0;
+	padding-left: 49px;
+	line-height: 1.3em;
+}
+.list-events li h6 {
+	font-size: 1em;
+	font-weight: bold;
+}
+.list-events li p.desc {
+	font-size: .9em;
+}
+.list-events li p.date {
+	float: left;
+	margin-left: -49px;
+	width: 40px;
+}
+.list-events li p.date .separator {
+	display: none;
+}
+.list-events li p.date .month,
+.list-events li p.date .day,
+.list-events li p.date .year {
+	display: block;
+	width: 40px;
+	color: #fff;
+	background: #333;
+	text-align: center;
+	line-height: 1.5em;
+}
+.list-events li p.date .day {
+	padding-top: 3px;
+	padding-bottom: 3px;
+}
+.list-events li p.date .month {
+	margin-top: -4px;
+	text-transform: uppercase;
+}
+.list-events li p.date .year {
+	background: #999;
+}
+
+
+.main-events li p.desc {
+	font-size: 1em;
+}
+.main-events li h5,
+.main-events li p {
+	padding-left: 120px;
+}
+.main-events li p.date {
+	float: left;
+	margin-left: -120px;
+	width: 50px;
+}
+.main-events li p.date .month,
+.main-events li p.date .day,
+.main-events li p.date .year {
+	width: 50px;
+}
+
+
+
+/* 5.3.5  Categories and Filters
+-------------------------------------------------- */
+#articles-categories li a {
+	padding: .4em 9px;
+	font-weight: bold;
+}
+
+#filters .filters {
+	margin-bottom: 0;
+}
+
+
+/* 5.3.6  Menu Buttons
+-------------------------------------------------- */
+header {
+	position: relative;
+}
+.menu-buttons {
+	position: absolute;
+	top: 18px;
+	right: 18px;
+}
+.menu-buttons li {
+	float: left;
+	margin-left: 6px;
+}
+.menu-buttons li a {
+	display: block;
+	background: #eee;
+	padding: .5em 1em;
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+	font-weight: bold;
+}
+.menu-buttons li a:hover {
+	background: #ddd;
+}
+.menu-buttons li.current a,
+.menu-buttons li.current a:hover {
+	cursor: default;
+	background: #2A8CC8;
+	color: #fff;
+}
+
+
+/* 5.3.7  Actions Menu
+-------------------------------------------------- */
+.actions-menu li {
+	display: inline;
+}
+.actions-menu li a {
+	display: block;
+	margin: 6px 0;
+	padding-left: 24px;
+	background: url("../images/action_icon_sprites_16x16.gif") 0 0 no-repeat;
+}
+.actions-menu li a:hover {
+	background-position: 0 -104px;
+}
+
+
+
+/*
+--------------------------------------------------
+5.4  Main Content
+-------------------------------------------------- */
+
+
+/* 5.4.1  Main
+-------------------------------------------------- */
+.main {
+	margin-top: 24px;
+}
+.positioning {
+	font-size: 2.4em;
+	line-height: 1.4em;
+	color: #000;
+}
+
+/* 5.4.2  List Profiles
+-------------------------------------------------- */
+.list-profiles {
+	border-top: 1px solid #ddd;
+}
+.content-expert .list-profiles {
+	margin-bottom: 0;
+}
+.list-profiles .profile {
+	padding: .7em 0;
+	padding-left: 68px;
+	border-bottom: 1px solid #ddd;
+	min-height: 58px;
+	position: relative;
+}
+.profile img {
+	border: 1px solid #ddd;
+	padding: 3px;
+	margin-left: -68px;
+	float: left;
+	display: inline;
+}
+.profile a:hover img {
+	border: 1px solid #999;
+}
+.list-profiles h5 {
+	margin-bottom: 4px;
+	margin-top: 4px;
+}
+.list-profiles .hon {
+	font-weight: bold;
+}
+.list-profiles p {
+	font-size: .9em;
+	line-height: 1.3em;
+	margin-bottom: 0;
+}
+p.profile-meta {
+	margin-top: .4em;
+}
+.media-100 .profile {
+	padding-left: 0;
+}
+.media-100 img {
+	margin-left: 0;
+	margin-right: 10px;
+}
+.media-100 .personal-info {
+	width: 190px;
+	margin-right: 10px;
+	float: left;
+}
+.media-100 p.cred {
+	margin-bottom: 1em;
+}
+.media-100 p.contact {
+	font-size: 1em;
+}
+.media-100 .profile .more-info {
+	position: static;
+	top: 0;
+	right: 0;
+	width: 290px;
+	margin-top: 6px;
+	float: left;
+}
+
+.media-140 .profile {
+	padding-left: 164px;
+}
+.media-140 .info {
+	margin-left: -164px;
+	float: left;
+	display: inline;
+}
+.media-140 img {
+	margin-left: 0;
+	float: none;
+	display: block;
+}
+.media-140 .profile-details {
+	padding-left: 164px;
+}
+
+.profile-details {
+	margin-bottom: 18px;
+}
+.profile-details .position {
+	margin-bottom: 12px;
+}
+.profile-details .position .title {
+	font-weight: bold;
+}
+.profile-details .contact-info {
+	background: #ddd;
+	padding: 6px;
+	text-align: center;
+}
+.profile-details .contact-info .tel {
+	font-size: 1.2em;
+}
+
+.profile-details .credentials li {
+	margin-left: 0;
+	list-style: none;
+}
+.profile-details .credentials .hon {
+	font-weight: bold;
+}
+
+.profile .more-info {
+	position: absolute;
+	top: 12px;
+	right: 0;
+	width: 290px;
+}
+.profile .more-info h6 {
+	font-size: .9em;
+	text-transform: uppercase;
+	letter-spacing: .1em;
+}
+.profile .more-info li {
+	font-size: .9em;
+	line-height: 1.4em;
+	list-style: disc;
+	margin-left: 16px;
+}
+.profile .more-info .more-link {
+	border: 0;
+	margin-top: 6px;
+	font-size: 1em;
+}
+
+
+p.team-position {
+	font-size: 1.2em;
+	padding: 6px 12px;
+	color: #fff;
+	background: #666;
+	float: right;
+	-moz-border-radius: 7px;
+	-webkit-border-radius: 7px;
+	border-radius: 7px;
+}
+
+.profile-gallery h2.content {
+	padding-bottom: 0;
+}
+
+.featured-profile .list-profiles {
+	margin-bottom: .5em;
+}
+
+
+/* 5.4.3  Small Profiles
+-------------------------------------------------- */
+.list-related-profiles {
+	margin-top: 9px;
+	padding-top: 6px;
+	border-top: 1px dotted #ccc;
+}
+.list-related-profiles h6 {
+	font-size: .9em;
+}
+.list-related-profiles h6:after {
+	content: ':';
+}
+.profiles li {
+	list-style: none;
+	float: left;
+	display: inline;
+	margin: 0 4px 4px 0;
+}
+.profiles li img {
+	float: left;
+	margin-right: 6px;
+	border: 1px solid #ddd;
+	background: #fff;
+	padding: 2px;
+}
+.profiles li a {
+	padding: 2px 12px 2px 2px;
+	background: #eee;
+	float: left;
+	white-space: nowrap;
+	height: 31px;
+	line-height: 31px;
+}
+.profiles li a:hover {
+	background: #ddd;
+}
+.authors .profiles li {
+	float: none;
+	display: block;
+}
+.authors .profiles li a {
+	float: none;
+	display: block;
+}
+
+
+/* 5.4.4  Articles
+-------------------------------------------------- */
+.articles {
+	border-top:1px solid #ccc;
+	list-style:none;
+	margin-bottom:0;
+}
+.events,
+.publications {
+	border-top:1px solid #ccc;
+	list-style:none;
+}
+.article,
+.event,
+.summary {
+	list-style: none;
+	margin:0;
+	padding:1em 0;
+	border-bottom:1px solid #ccc;
+}
+.excerpt h5 {
+	margin-bottom:0;
+}
+.excerpt p {
+	margin-bottom:0;
+}
+.summary h4 {
+	margin-bottom:.2em;
+}
+.summary h5 {
+	margin-bottom:.5em;
+}
+.content-meta {
+	border-top:1px solid #ccc;
+	padding-top:.4em;
+}
+.article-meta {
+	clear: both;
+	border-top:1px dotted #ccc;
+	margin-top:.5em;
+	padding-top:.4em;
+}
+article.excerpt {
+	padding-top: 1em;
+	border-top: 1px dotted #ddd;
+}
+p.description {
+	margin-bottom: .5em;
+}
+article.excerpt .resource-meta {
+	padding-top: 0;
+	border-top: 0;
+}
+
+
+/* 5.4.5  Articles and Events
+-------------------------------------------------- */
+.meta-list .article,
+.event {
+	padding-left: 120px;
+}
+.meta-list .article h5,
+.event h5 {
+	margin-bottom: .5em;
+}
+.meta-list .meta,
+.event-meta {
+	float: left;
+	display: inline;
+	margin-left: -120px;
+	width: 100px;
+}
+.meta-list .meta strong,
+.meta-list .meta span,
+.event-meta strong,
+.event-meta span {
+	display: block;
+}
+.meta-list .meta .separator,
+.event-meta .separator {
+	display: none;
+}
+
+.articles-prefs {
+	text-align: right;
+	background: #ddd;
+	margin-top: 18px;
+	padding: .5em .8em;
+	-moz-border-radius: 7px;
+	-webkit-border-radius: 7px;
+	border-radius: 7px;
+}
+.articles-prefs a.current {
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+
+/* 5.4.6 Images
+----------------------------------------------- */
+img.image,
+a.image img {margin-bottom: 18px;}
+
+
+/* 5.4.7  Links
+-------------------------------------------------- */
+.more-link:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+.more-link {
+	zoom: 1;
+	display: block;
+}
+.more-link {
+	margin-bottom:0;
+	padding:0.4em 0;
+	border-bottom:1px solid #ccc;
+}
+.more-link a {
+	float: left;
+}
+a.action,
+a.down,
+a.download,
+a.rss,
+a.twitter,
+a.up,
+a.uri {
+	float:right;
+	padding-right:24px;
+	font-weight:normal;
+	background-position: right 1px;
+	background-repeat: no-repeat;
+}
+a.action {background-image: url("../images/action_icon_sprites_16x16.gif")}
+a.down {background-image: url("../images/down_icon_sprites_16x16.gif")}
+a.download {background-image: url("../images/download_icon_sprites_16x16.gif")}
+a.rss {background-image: url("../images/rss_icon_sprites_16x16.gif")}
+a.twitter {background-image: url("../images/twitter_icon_sprites_16x16.gif")}
+a.up {background-image: url("../images/up_icon_sprites_16x16.gif")}
+a.uri {background-image: url("../images/uri_icon_sprites_16x16.gif")}
+
+a.action:hover,
+a.down:hover,
+a.download:hover,
+a.rss:hover,
+a.twitter:hover,
+a.up:hover,
+a.uri:hover {
+	background-position: right -103px;
+}
+
+
+/* 5.4.8 Media
+----------------------------------------------- */
+.media .image {
+	float:left;
+}
+.media .image img {
+	margin:0;
+}
+.media .article-content {
+	margin-left: 132px;
+}
+.issue {
+	font-weight:normal;
+}
+.file-type {
+	font-weight:normal;
+}
+
+
+/* 5.4.9  Intro Paragraphs
+-------------------------------------------------- */
+.intro {
+	font-size: 1.4em;
+	line-height: 1.5em;
+}
+
+
+/* 5.4.10  Action Buttons
+-------------------------------------------------- */
+p.button {
+	margin: 15px 0;
+}
+p.button a,
+p.button a:link,
+p.button a:visited {
+	font-size: 1.4em;
+	padding: 10px 15px;
+	color: #fff;
+	background: #000;
+	float: left;
+	-moz-border-radius: 7px;
+	-webkit-border-radius: 7px;
+	border-radius: 7px;
+}
+p.button a:hover {
+	background: #2a8cc8;
+}
+p.header-button {
+	float: right;
+	margin: 0;
+}
+p.header-button a,
+p.header-button a:link,
+p.header-button a:visited {
+	font-size: 1.2em;
+	padding: 6px 12px;
+}
+
+
+a.action-button,
+a.action-button:link,
+a.action-button:visited {
+	font-size: 1em;
+	padding: 6px 12px;
+	margin: 12px;
+	color: #fff;
+	background: #000;
+	float: right;
+	-moz-border-radius: 7px;
+	-webkit-border-radius: 7px;
+	border-radius: 7px;
+}
+a.action-button:hover {
+	background: #2a8cc8;
+}
+
+
+/* 5.4.11  Filter Buttons
+-------------------------------------------------- */
+li.button {
+	margin: 6px 0;
+	display: inline;
+}
+li.button a {
+	float: left;
+	font-size: 1.2em;
+	padding: 6px 15px;
+	background: #ddd;
+	-moz-border-radius: 7px;
+	-webkit-border-radius: 7px;
+	border-radius: 7px;
+	margin-right: 6px;
+}
+li.button a:hover {
+	color: #fff;
+	background: #666;
+}
+li.button a:active {
+	color: #fff;
+	background: #000;
+}
+
+
+/* 5.4.12  Spacing
+(for convenience only - not for production)
+-------------------------------------------------- */
+.m0 {
+	margin: 0;
+}
+.mt0 {
+	margin-top: 0;
+}
+.mr0 {
+	margin-right: 0;
+}
+.mb0 {
+	margin-bottom: 0;
+}
+.ml0 {
+	margin-left: 0;
+}
+.m15 {
+	margin: 15px;
+}
+.mt15 {
+	margin-top: 15px;
+}
+.mr15 {
+	margin-right: 15px;
+}
+.mb15 {
+	margin-bottom: 15px;
+}
+.ml15 {
+	margin-left: 15px;
+}
+.p0 {
+	padding: 0;
+}
+.pt0 {
+	padding-top: 0;
+}
+.pr0 {
+	padding-right: 0;
+}
+.pb0 {
+	padding-bottom: 0;
+}
+.pl0 {
+	padding-left: 0;
+}
+.p15 {
+	padding: 15px;
+}
+.pt15 {
+	padding-top: 15px;
+}
+.pr15 {
+	padding-right: 15px;
+}
+.pb15 {
+	padding-bottom: 15px;
+}
+.pl15 {
+	padding-left: 15px;
+}
+
+
+
+/*
+--------------------------------------------------
+5.5  jQuery Tools Scrollable Slideshow
+-------------------------------------------------- */
+
+
+/* 5.5.1  Scrollable Items
+-------------------------------------------------- */
+div.items {	
+	padding: 0px;
+	margin: 0px;
+	width:20000em;
+	position:absolute;
+	clear:both;
+}
+div.items img {
+	display: block;
+}
+
+
+/* 5.5.2  Feature Items
+-------------------------------------------------- */
+#feature {
+	width: 600px;
+	height: 320px;
+	position:relative;
+	overflow:hidden;
+}
+#feature div.items div {
+	width: 600px;
+	float:left;
+}
+#feature div.items p,
+#feature div.items img {
+	margin-bottom: 0;
+}
+#feature div.items .image {
+	margin-bottom: 18px;
+}
+#feature div.items .article-meta {
+	margin-bottom: 0;
+}
+
+
+
+/* 5.5.3  Slideshow Navigator
+-------------------------------------------------- */
+#controls {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+}
+.navi {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	padding: 11px 0;
+	width: 500px;
+	height: 26px;
+}
+
+/* items inside navigator */
+.navi a {
+	background-position: 0px -20px;
+	background-image: url(img/selections.gif);
+	width: 20px;
+	height: 20px;
+	float:left;
+	margin:3px;
+	display:block;
+	font-size:1px; 
+}
+
+/* mouseover state */
+.navi a:hover {      
+	background-position: 0 0;
+	cursor: pointer;    
+}
+
+/* active state (current page state) */
+.navi a.active {    
+	background-position: 0 -40px;
+	cursor: default;
+}
+
+
+
+
+/* 5.5.4  Navigation
+-------------------------------------------------- */
+a.browse {
+	display:block;
+	width:48px;
+	height:48px;
+	float:left;
+	cursor:pointer;
+}
+
+/* right */
+a.right {
+	background:url(img/arrow_right.gif) no-repeat;
+	background-position: 0 -144px;
+	margin-right: 0px;
+}
+a.right:hover {
+	background-position:0 0;
+}
+a.right:active {
+	background-position:0 -48px;
+}
+
+
+/* left */
+a.left {
+	background:url(img/arrow_left.gif) no-repeat;
+	background-position: 0 -144px;
+	margin-left: 0px;
+}
+a.left:hover {
+	background-position:0 0;
+}
+a.left:active {
+	background-position:0 -48px;
+}
+
+
+/* disabled navigational button */
+a.disabled {
+	visibility:hidden !important;		
+}
+
+
+/*
+--------------------------------------------------
+5.6  Sections
+-------------------------------------------------- */
+
+
+/* 5.6.1  Secondary Section
+-------------------------------------------------- */
+.tertiary {
+	margin: 30px 0;
+}
+
+
+
+
+/*
+--------------------------------------------------
+5.7  Site Info
+-------------------------------------------------- */
+
+
+/* 5.7.1  Site Information
+-------------------------------------------------- */
+.site-info {
+	background: #eee;
+	border-top: 1px solid #ccc;
+	margin-top: 30px;
+}
+.site-info .nav {
+	padding-top: 2em;
+	margin: 0 15px;
+}
+.site-info .nav li a {
+	padding-left: 0;
+	padding-top: 0;
+	padding-bottom: 0;
+}
+li.rssfeed {
+	float: right;
+}
+.copyright {
+	padding-bottom: 1em;
+}
+
+
+
+/*
+--------------------------------------------------
+5.8  Forms
+-------------------------------------------------- */
+
+
+/* 5.8.1  Basic Form
+-------------------------------------------------- */
+form.basic div {
+	margin-top: 12px;
+	margin-bottom: 12px;
+}
+form.basic label {
+	display: block;
+}
+form.basic input[type="text"] {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	width: 100%;
+}
+form.basic select {
+	width: 100%;
+}
+form.basic textarea {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	width: 100%;
+}
+form.basic label {
+	position: relative;	
+}
+form.basic label i {
+	color: #aaa;
+	font-style: normal;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+
+/* 5.8.2  Tags
+-------------------------------------------------- */
+ul.tags {
+	margin-top: 6px;
+	margin-bottom: 18px;
+}
+ul.tags li {
+	color: #aaa;
+	font-size: .9em;
+	float: left;
+	margin-right: .8em;
+	cursor: pointer;
+}
+ul.tags li:hover {
+	color: #666;
+}
+ul.tags li {
+	list-style: none;
+	margin: 0 3px 3px 0;
+	font-size: 1em;
+}
+ul.tags li a {
+	float: left;
+	padding: .2em .7em;
+	background: #eee;
+}
+ul.tags li a.current,
+ul.tags li a:hover {
+	color: #fff;
+	background: #2a8cc8;
+}
+.tags-links {
+	margin-bottom: .5em;
+}
+
+
+/* 5.8.3  Validation Messages
+-------------------------------------------------- */
+.validation-messages li {
+	list-style: disc;
+	margin-left: 30px;
+}
+p.success {
+	color: green;
+}
+p.error {
+	color: red;
+}
+.error .message {
+	color: red;
+}
+.required abbr {
+	color: red;
+}
+.resource-meta {
+	color: #999;
+	padding-top: .5em;
+	border-top: 1px dotted #ccc;
+}
+
+
+/* 5.8.4  Label
+-------------------------------------------------- */
+label span,
+div.label span {
+	display: block;
+	margin: 2px 0 1.75em;
+	border: 1px solid #e4e4de;
+	padding: 12px;
+	background-color: #f5f5f3;
+	text-align: center;
+}
+
+
+/* 5.8.5  File
+-------------------------------------------------- */
+.file input {
+	margin: -3px 0;
+	font: inherit;
+}
+.file span {
+	padding-right: 7.5em;
+	overflow: hidden;
+	text-align: left;
+}
+.file a {
+	float: left;
+}
+.file em {
+	float: right;
+	margin-right: -7.5em;
+	width: 7.5em;
+	color: #998;
+	text-decoration: underline;
+	font-style: normal;
+	cursor: pointer;
+}
+.file em:hover {
+	color: #d43;
+}
+
+
+/* 5.8.6  Select Filter
+-------------------------------------------------- */
+.select-filter select {
+	margin-bottom: 15px;
+}
+
+
+/*
+--------------------------------------------------
+5.9  Items
+-------------------------------------------------- */
+
+
+/* 5.9.1  Items with JavaScript Toggle
+-------------------------------------------------- */
+#items .button a {
+	font-size: 1em;
+	padding: .5em 1em;
+}
+#items li {
+	margin-bottom: 1em;
+	font-size: 1.5em;
+}
+#items li .item-title {
+	line-height: 1.2em;
+}
+#items li .item-content {
+	font-size: .75em;
+}
+#items li ul li {
+	font-size: 1em;
+	list-style: disc;
+	margin-bottom: 0;
+}
+.item-content {
+ 	margin-top: .5em;
+ 	display:none;
+}
+.content-open .item-content {
+	display:block;	
+}
+
+
+
+
+/*
+==================================================
+
+6  COLORS
+
+==================================================
+*/
+
+
+/*
+--------------------------------------------------
+6.1  Anchors
+-------------------------------------------------- */
+a {
+	color: #000;
+}
+a:link, a:visited, a:active  {
+	color: #000;
+}
+a:hover {
+	color: #2A8CC8;
+}
+
+
+
+
+/*
+==================================================
+
+7  BRANDING
+
+==================================================
+*/
+
+
+/*
+--------------------------------------------------
+7.1  Logo
+-------------------------------------------------- */
+.logo a {
+	display: block;
+	width: 102px;
+	height: 24px;
+	text-indent: -9999em;
+	background-image: url("../img/logo.gif");
+	margin-bottom: 6px;
+}
+
+
+/*
+--------------------------------------------------
+7.2  Site Branding
+-------------------------------------------------- */
+.site-name a {
+	display: block;
+	padding: 24px 0;
+}

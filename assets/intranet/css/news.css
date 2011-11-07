@@ -1,0 +1,553 @@
+/*
+==================================================
+Organization News
+==================================================
+file:     news.css
+version:  1.0
+date:     26 November 2010
+author:   Author Name
+agency:   Organization
+url:      http://example.com
+--------------------------------------------------
+
+
+--------------------------------------------------
+Table of Contents
+--------------------------------------------------
+
+
+      NEWS STYLES
+      --------------------------------------------
+
+         1  NEWS
+             1.1  Page Layout
+                   1.1.1  Main Section
+                   1.1.2  Articles
+             1.2  Article
+                   1.2.1  Article
+                   1.2.2  Article Content
+                   1.2.3  Article Clearing
+             1.3  Meta
+                   1.3.1  Publish Date
+                   1.3.2  Article Author
+                   1.3.3  Comment Count
+             1.4  Navigation
+             1.5  Comments
+             1.6  Pagination
+             1.7  Effects
+         2  MEDIA QUERIES
+             2.1  Medium Screens
+             2.2  Small Screens
+             2.3  Narrow Screens
+
+
+--------------------------------------------------
+*/
+
+
+
+
+
+/*
+==================================================
+
+1  NEWS
+
+==================================================
+*/
+
+
+/*
+--------------------------------------------------
+1.1  Page Layout
+-------------------------------------------------- */
+
+
+/* 1.1.1  Main Section
+-------------------------------------------------- */
+section.main {
+	margin-right: 0;
+	width: auto;
+}
+
+
+/* 1.1.2  Articles
+-------------------------------------------------- */
+.full-article,
+.articles {
+	float: left;
+	display: inline;
+	width: 648px;
+}
+
+
+/*
+--------------------------------------------------
+1.2  Article
+-------------------------------------------------- */
+
+
+/* 1.2.1  Article
+-------------------------------------------------- */
+.articles article {
+	width: 648px;
+	padding-bottom: 20px;
+	border-bottom: 1px solid #e8e8e8;
+	margin-bottom: 20px;
+}
+#news-archive article {
+	padding-bottom: 0;
+	border-bottom: none;
+	margin-bottom: 0;
+}
+
+
+/* 1.2.2  Article Content
+-------------------------------------------------- */
+article .content {
+	float: right;
+	width: 478px;
+	padding: 0;
+}
+article .content img {
+	border: 10px solid #f0f0f0;
+	margin-top: 10px;
+}
+.more-link a {
+	font-weight: bold;
+	color: #ed5694;
+}
+
+
+/* 1.2.3  Article Clearing
+-------------------------------------------------- */
+.articles article:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+.articles article {
+	zoom: 1;
+	display: block;
+}
+
+
+/*
+--------------------------------------------------
+1.3  Meta
+-------------------------------------------------- */
+article .meta {
+	margin-right: 498px;
+}
+
+
+/* 1.3.1  Publish Date
+-------------------------------------------------- */
+article .meta time {
+	display: block;
+	width: 75px;
+	margin-right: 53px;
+	margin-bottom: 12px;
+	padding: 12px 3px 9px;
+	background: #eee;
+	font-size: 14px;
+	font-weight: bold;
+	line-height: 12px;
+	text-align: center;
+	text-transform: uppercase;
+	color: #b1b0b0;
+}
+article .meta time .month-day {
+	display: block;
+}
+article .meta time .separator {
+	display: none;
+}
+article .meta time .year {
+	font-size: 10px;
+	font-weight: normal;
+}
+article .meta p {
+	font-size: 10px;
+	color: #b1b0b0;
+	margin: 1em 0;
+}
+
+
+/* 1.3.2  Article Author
+-------------------------------------------------- */
+article .meta .posted-by {
+	letter-spacing: .1em;
+	text-transform: uppercase;
+}
+article .meta .author .fn {
+	display: block;
+	font-size: 12px;
+	font-weight: bold;
+	letter-spacing: 0;
+	margin-bottom: 12px;
+}
+article .meta a {
+	color: #ed5694;
+}
+article .avatar {
+	display: block;
+	width: 95px;
+	height: 95px;
+	overflow: hidden;
+}
+article .avatar:hover img {
+	margin-top: -95px;
+}
+
+
+/* 1.3.3  Comment Count
+-------------------------------------------------- */
+article .meta .comment-count {
+	overflow: hidden;
+	font-size: 12px;
+}
+article .meta .comment-count .value {
+	float: left;
+	background: url(../../public/img/comment-bubble.png) no-repeat;
+	width: 18px;
+	height: 23px;
+	margin-top: 2px;
+	padding: 1px 0 0 8px;
+	color: #fff;
+}
+article .meta .comment-count .label {
+	float: left;
+	padding-top: 3px;
+}
+
+
+/* 1.3.4  Email News Post
+-------------------------------------------------- */
+form#email-news-post .submit {
+	margin-bottom: 12px;
+}
+
+
+/*
+--------------------------------------------------
+1.4  Articles Navigation
+-------------------------------------------------- */
+.articles-nav {
+	float: left;
+	width: 232px;
+	margin-left: 30px;
+}
+
+
+/* clearfix
+-------------------------------------------------- */
+.articles-nav:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+.articles-nav {
+	zoom: 1;
+	display: block;
+}
+
+
+/*
+--------------------------------------------------
+1.5  Article Comments
+-------------------------------------------------- */
+h2#comments-head {
+	color: #ed5694;
+	margin-top: 40px;
+}
+.comments {
+	clear: both;
+	width: 478px;
+	margin-left: 170px;
+}
+.comments div {
+	margin-top: 12px;
+}
+.comments label {
+	font-size: 12px;
+	display: block;
+}
+.comments textarea {
+	width: 100%;
+	height: 120px;
+}
+.comment-poster {
+	color: #ccc;
+	margin-bottom: .5em;
+}
+.comments .comment-comment {
+	padding-bottom: 18px;
+	margin-top: 0;
+	margin-bottom: 18px;
+	border-bottom: 1px dotted #ddd;
+}
+.comments .comment-comment p:last-child {
+	margin-bottom: 0;
+}
+
+
+/*
+--------------------------------------------------
+1.6  Pagination
+-------------------------------------------------- */
+ul.pagination {
+	clear: both;
+	font-size: 12px;
+	color: #555;
+	background-color: #333;
+	text-align: center;
+	padding: 5px;
+	margin: 20px 0 !important;
+	width: 638px;
+}
+ul.pagination li {
+	display: inline;
+	margin-left: 0;
+}
+ul.pagination li a {
+	text-decoration: none;
+}
+ul.pagination li.disabled a {
+	color: #555;
+	cursor: default;
+}
+ul.pagination a {
+	color: #5EB0DB;
+	padding: 3px;
+}
+ul.pagination a:hover {
+	color: #fff;
+}
+ul.pagination .selected a {
+	color: #fff;
+	cursor: default;
+}
+
+
+/*
+--------------------------------------------------
+1.7  Effects
+-------------------------------------------------- */
+time {
+	border-radius: 7px;
+	-moz-border-radius: 7px;
+	-webkit-border-radius: 7px;
+}
+ul.pagination {
+	border-radius: 6px;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+}
+
+
+
+
+/*
+==================================================
+
+2  MEDIA QUERIES
+
+==================================================
+*/
+
+/*
+	Less Framework 3 beta
+	by Joni Korpi
+	------------------------
+	http://lessframework.com
+*/
+
+
+/*
+--------------------------------------------------
+2.1  Medium Screens (768 pixels wide)
+-------------------------------------------------- */
+
+/*	Default 8-column layout
+	60 px columns, 24 px gutters, 60 px margins, 768 px total
+	----------------------------------------------------------------
+	1     2      3      4      5      6      7      8
+	60px  144px  228px  312px  396px  480px  564px  648px	*/
+
+@media (max-width: 960px) and (min-width: 768px) {
+
+	.content {
+		padding: 18px 0;
+	}
+	#article,
+	.articles {
+		width: auto;
+		float: none;
+	}
+	#article article,
+	.articles article {
+		width: 648px;
+	}
+	#article article .content,
+	.articles article .content {
+		width: 468px;
+	}
+	#article article .meta,
+	.articles article .meta {
+		margin-right: 498px;
+	}
+	article .content img {
+		max-width: 100%;
+		border: 0;
+	}
+	article .content object {
+		max-width: 468px;
+		height: 300px;
+	}
+	ul.pagination {
+		width: 638px;
+	}
+	.articles-nav {
+		float: none;
+		width: auto;
+		margin-left: 0;
+		margin-top: 36px;
+		padding-top: 18px;
+		border-top: 1px solid #eee;
+	}
+	.comments {
+		width: 468px;
+		margin-left: 180px;
+	}
+
+}
+
+
+/*
+--------------------------------------------------
+2.2  Small Screens (480 pixels wide)
+-------------------------------------------------- */
+
+/*	5-column layout
+	60 px columns, 24 px gutters, 42 px margins, 480 px total
+	---------------------------------------------------------
+	1     2      3      4      5
+	60px  144px  228px  312px  396px	*/
+
+@media only screen and (max-width: 767px) and (min-width: 480px) {
+
+	.content {
+		padding: 18px 0;
+	}
+	#article,
+	.articles {
+		width: 396px;
+		float: none;
+	}
+	#article article,
+	.articles article {
+		width: auto;
+	}
+	#article article .content,
+	.articles article .content {
+		float: none;
+		width: auto;
+	}
+	#article article .meta,
+	.articles article .meta {
+		margin-right: 0;
+	}
+	#article .content img,
+	article .content img {
+		max-width: 100%;
+		border: 0;
+	}
+	article .content object {
+		max-width: 386px;
+		height: 250px;
+	}
+	ul.pagination {
+		width: 386px;
+	}
+	.articles-nav {
+		float: none;
+		width: auto;
+		margin-left: 0;
+		margin-top: 36px;
+		padding-top: 18px;
+		border-top: 1px solid #ddd;
+	}
+	.comments {
+		clear: both;
+		width: auto;
+		margin-left: 0;
+	}
+
+}
+
+
+/*
+--------------------------------------------------
+2.3  Narrow Screens (320 pixels wide)
+-------------------------------------------------- */
+
+/*	3-column layout
+	60 px columns, 24 px gutters, 46 px margins, 320 px total
+	---------------------------------------------------------
+	1     2      3
+	60px  144px  228px	*/
+
+@media only screen and (max-width: 479px) {
+
+	.content {
+		padding: 18px 0;
+	}
+	#article,
+	.articles {
+		width: 228px;
+		float: none;
+	}
+	#article article,
+	.articles article {
+		width: auto;
+	}
+	#article article .content,
+	.articles article .content {
+		float: none;
+		width: auto;
+	}
+	#article article .meta,
+	.articles article .meta {
+		margin-right: 0;
+	}
+	article .content img {
+		max-width: 100%;
+		border: 0;
+	}
+	article .content object {
+		max-width: 228px;
+		height: 180px;
+	}
+	ul.pagination {
+		width: 228px;
+	}
+	.articles-nav {
+		float: none;
+		width: auto;
+		margin-left: 0;
+		margin-top: 36px;
+		padding-top: 18px;
+		border-top: 1px solid #ddd;
+	}
+	.comments {
+		clear: both;
+		width: auto;
+		margin-left: 0;
+	}
+
+}

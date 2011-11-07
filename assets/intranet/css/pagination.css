@@ -1,0 +1,65 @@
+/*
+==================================================
+Pagination
+==================================================
+file:     pagination.css
+version:  1.0
+date:     13 October 2011
+author:   Author Name
+agency:   Organization
+url:      http://example.com
+--------------------------------------------------
+*/
+
+
+
+
+
+/*
+--------------------------------------------------
+Pagination
+-------------------------------------------------- */
+ul.pagination {
+	font-size: 12px;
+	color: #555;
+	background-color: #333;
+	text-align: center;
+	padding: 5px;
+	margin: 20px 0 !important;
+	width: 638px;
+}
+ul.pagination li {
+	display: inline;
+	margin-left: 0;
+}
+ul.pagination li a {
+	text-decoration: none;
+}
+ul.pagination li.disabled a {
+	color: #555;
+	cursor: default;
+}
+ul.pagination a {
+	color: #5EB0DB;
+	padding: 3px;
+}
+ul.pagination a:hover {
+	color: #fff;
+}
+ul.pagination .selected a {
+	color: #fff;
+	cursor: default;
+}
+
+
+
+/*
+--------------------------------------------------
+Effects
+-------------------------------------------------- */
+ul.pagination {
+	border-radius: 6px;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+}
+

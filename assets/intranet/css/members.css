@@ -1,0 +1,299 @@
+/*
+==================================================
+Organization Members
+==================================================
+file:     members.css
+version:  1.0
+date:     15 April 2011
+author:   Author Name
+agency:   Organization
+url:      http://example.com
+--------------------------------------------------
+
+
+--------------------------------------------------
+Table of Contents
+--------------------------------------------------
+
+
+      MEMBERS STYLES
+      --------------------------------------------
+
+         1  MEMBERS
+             1.1  Member Header
+             1.2  Options
+             1.3  Member Details
+                   1.3.1  Member Details Color
+             1.4  Member Form
+         2  MEDIA QUERIES
+
+
+--------------------------------------------------
+*/
+
+
+
+
+
+/*
+==================================================
+
+1  MEMBERS
+
+==================================================
+*/
+
+
+/*
+--------------------------------------------------
+1.1  Member Header
+-------------------------------------------------- */
+#header img {
+	float: left;
+	margin: 10px 25px 10px 10px;
+}
+#header h2 {
+	font-size: 23px;
+	padding-top: 5px;
+	line-height: 60px;
+}
+#header h2#owner {
+	line-height: inherit;
+}
+#header h2 em {
+	font-style: normal;
+	font-size: 20px;
+	font-weight: 400;
+}
+
+
+/*
+--------------------------------------------------
+1.2  Options
+-------------------------------------------------- */
+#options {
+	list-style: none;
+	margin: 5px 0 0;
+}
+#options li {
+	display: inline;
+	margin-right: 5px;
+	padding-right: 5px;
+}
+#options li.last {
+	border: none;
+}
+
+
+/*
+--------------------------------------------------
+1.3  Member Details
+-------------------------------------------------- */
+#member-details {
+	clear: both;
+}
+#member-details dt {
+	float: left;
+	padding: 1em 0;
+	width: 12em;
+}
+#member-details dd {
+	padding: 1em 1em 1em 14em;
+}
+
+
+/* 1.3.1  Member Details Color
+-------------------------------------------------- */
+#member-details {
+	border-top: 1px solid #ddd;
+}
+#member-details dd {
+	border-bottom: 1px solid #ddd;
+}
+
+
+/*
+--------------------------------------------------
+1.4  Member Form
+-------------------------------------------------- */
+#system-message p.error {
+	margin-top: 15px;
+}
+#system-message p.error:before {
+	content: "!";
+	font-weight: bold;
+	padding: 1px 4px;
+	margin-right: 5px;
+}
+form.members-form fieldset {
+	border: none;
+}
+form.members-form p {
+	margin-bottom: 5px;
+	padding-bottom: 10px;
+}
+form.members-form p input {
+	display: block;
+	width: 60%;
+	margin-left: 35%;
+}
+form.members-form p textarea {
+	display: block;
+	padding: 5px;
+	width: 60%;
+	height: 400px;
+	margin-left: 35%;
+}
+form.members-form p #charlimitinfo {
+	position: absolute;
+	right: 64px;
+	width: 150px;
+	text-align: center;
+	font-size: 2em;
+	font-weight: 700;
+	font-style: normal;
+	line-height: 40px;
+	letter-spacing: 2px;
+}
+form.members-form label {
+	float:left;
+	width: 32%;
+	padding-top: 1px;
+	text-align: right;
+	color: #333;
+}
+form.members-form p #wmd-input.document-content {
+	height: 400px;
+}
+form.members-form p.option label {
+	padding-top: 0;
+}
+form.members-form p.option span {
+	display: block;
+	margin-left: 35%;
+}
+form.members-form p.option input {
+	display: inline;
+	width: auto;
+	margin: 0 5px 0 0;
+}
+form.members-form p.option input[type="hidden"] {
+	display: none;
+}
+form.members-form p select {
+	display: block;
+	width: 60%;
+	margin-left: 35%;
+}
+form.members-form #submission {
+	margin-top: 10px;
+	margin-left: 35%;
+}
+form.members-form #submission #cancel {
+	margin-left: 12px;
+}
+form.members-form #submission .resend {
+	margin-left: 12px;
+}
+form.members-form .upload-value {
+	display: block;
+	margin-left: 35%;
+}
+form.members-form .upload-value input {
+	margin: 0;
+	width: 222px;
+}
+form.members-form .upload-value input[type=file] {
+	width: 618px;
+}
+
+
+/*
+--------------------------------------------------
+2  Media Queries
+-------------------------------------------------- */
+
+@media only screen and (max-width: 960px) and (min-width: 768px) {
+
+	.content {
+		padding: 18px 0;
+		margin-right: 258px;
+	}
+
+}
+
+@media only screen and (max-width: 960px) {
+
+	.comment-body {
+		margin-left: 0;
+	}
+
+}
+
+@media only screen and (max-width: 479px) {
+
+	#header {
+		margin-top: 36px;
+	}
+	#header img {
+		margin: 0 12px 0 0;
+	}
+	#header h2 {
+		font-size: 1.5em;
+		line-height: 1em;
+		padding-top: 9px;
+		height: 41px;
+		margin-bottom: 18px;
+	}
+	#header h2 em {
+		font-size: .7em;
+		display: block;
+	}
+	form.members-form p input {
+		width: 97%;
+		margin-left: 0;
+	}
+	form.members-form p textarea {
+		width: 97%;
+		margin-left: 0;
+	}
+	form.members-form label {
+		float: none;
+		display: block;
+		width: 100%;
+		text-align: left;
+	}
+	form.members-form p.option span {
+		display: block;
+		margin-left: 0;
+	}
+	form.members-form p select {
+		width: 100%;
+		margin-left: 0;
+	}
+	form.members-form #submission {
+		margin-left: 0;
+	}
+	form.members-form .upload-value {
+		display: block;
+		margin-left: 0;
+	}
+	form.members-form #submission #cancel {
+		display: block;
+		margin-left: 0;
+		margin-top: 9px;
+	}
+
+
+	#member-details dt {
+		float: none;
+		padding: 6px 0 0 0;
+		width: auto;
+		color: #333;
+		font-weight: bold;
+	}
+	#member-details dd {
+		padding: 0 0 6px 0;
+	}
+
+}

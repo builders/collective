@@ -1,0 +1,548 @@
+/*
+==================================================
+Organization Forum
+==================================================
+file:     forum.css
+version:  1.0
+date:     7 December 2010
+author:   Author Name
+agency:   Organization
+url:      http://example.com
+--------------------------------------------------
+
+
+--------------------------------------------------
+Table of Contents
+--------------------------------------------------
+
+
+      FORUM STYLES
+      --------------------------------------------
+
+         1  FORUM
+             1.1  Forum Styles
+                   1.1.1  Import WMD Editor Styles
+             1.2  Forum Listings
+                   1.2.1  Discussions
+                   1.2.2  Discussion Status
+                   1.2.3  Discussion Options
+                   1.2.3  Pagination
+             1.3  Forum Comments
+                   1.3.1  Comments
+                   1.3.2  Comments Meta Data
+                   1.3.3  Comments Controls
+                   1.3.4  Comments Admin Controls
+             1.4  Forms
+                   1.4.1  Login Form
+                   1.4.2  Comment Form
+             1.5  Forum Enhancements
+                   1.5.1  Syntax Highlighting
+         2  MEDIA QUERIES
+
+
+--------------------------------------------------
+*/
+
+
+
+
+
+/*
+==================================================
+
+1  FORUM
+
+==================================================
+*/
+
+
+/*
+--------------------------------------------------
+1.1  Forum Styles
+-------------------------------------------------- */
+
+
+/* 1.1.1  Import WMD Editor Styles
+-------------------------------------------------- */
+@import url("wmd.css");
+
+
+/*
+--------------------------------------------------
+1.2  Forum Listings
+-------------------------------------------------- */
+
+
+/* 1.2.1  Dicussions
+-------------------------------------------------- */
+#discussions {
+	border-top: 1px solid #eee;
+}
+.discussion {
+	list-style: none;
+	margin-left: 0;
+	border-bottom: 1px solid #eee;
+	padding: 9px;
+}
+.discussion h3 {
+	font-size: 1.4em;
+	margin-bottom: .2em;
+}
+.discussion p {
+	margin-bottom: .2em;
+}
+.discussion p.discussion-meta {
+	color: #aaa;
+}
+.discussion .replies {
+	color: #666;
+}
+.notification {
+	margin-bottom: 1em;
+}
+
+/* 1.2.2  Discussion Status
+-------------------------------------------------- */
+.alternate {background-color: #f9f9f9}
+.unread {background-color: #fffedf}
+.unread:hover {background-color: #fffeba}
+.sticky {background-color: #f2ffd2}
+.sticky:hover {background-color: #e5ffa6}
+.closed:hover {background-color: #ffe4e2}
+
+.new-comments,
+.closed-discussion {
+	color: #fff;
+	background: #999;
+	background: rgba(0, 0, 0, .4);
+	padding: .2em .5em;
+	margin-right: .5em;
+	border-radius: 4px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+}
+.new-comments:hover {
+	background: #2a8cc8;
+}
+.closed-discussion {
+	color: #666;
+	background: transparent;
+	background: rgba(0, 0, 0, .1);
+}
+.discussion:hover .closed-discussion {
+	background: #fff;
+}
+
+
+/* 1.2.3  Discussion Options
+-------------------------------------------------- */
+#discussion-options ul {
+	margin: 5px 0 0;
+}
+#discussion-options li {
+	display: inline;
+	padding-left: 0.5em;
+	margin-right: 0.5em;
+}
+#discussion-options li:first-child {
+	border: none;
+	padding-left: 0;
+}
+
+
+/* 1.2.4  Pagination
+-------------------------------------------------- */
+ul.pagination {
+	clear: both;
+	font-size: 12px;
+	color: #555;
+	background-color: #333;
+	text-align: center;
+	padding: 5px;
+	margin: 20px 0;
+}
+ul.pagination li {
+	display: inline;
+	margin: 0;
+}
+ul.pagination li a {
+	text-decoration: none;
+}
+ul.pagination li.disabled a{
+	color: #555;
+	cursor: default;
+}
+ul.pagination a {
+	color: #5EB0DB;
+	padding: 3px;
+}
+ul.pagination a:hover {
+	color: #fff;
+}
+ul.pagination .selected a {
+	color: #fff;
+	cursor: default;
+}
+
+
+/* Effects */
+
+ul.pagination {
+	border-radius: 6px;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+}
+
+
+/*
+--------------------------------------------------
+1.3  Discussion Comments
+-------------------------------------------------- */
+
+
+/* 1.3.1  Comments
+-------------------------------------------------- */
+.heading {
+	border-top: 1px solid #eee;
+	border-bottom: 1px solid #eee;
+	padding: .7em 0;
+	margin-bottom: 0;
+}
+.comment {
+	position: relative;
+	overflow: hidden;
+	padding: 20px 0 10px;
+	border-bottom: 1px solid #eee;
+}
+.comment-body {
+	margin-left: 120px;
+}
+.comment-body h1,
+.comment-body h2,
+.comment-body h3 {
+	margin-bottom: 15px;
+}
+.comment-body > ol,
+.comment-body > ul {
+	margin-top: 0;
+}
+.comment-body img {
+	max-width: 100%;
+}
+.comment-body blockquote {
+	background-color: #eee;
+	border-left: 5px solid #ccc;
+	margin-bottom: 1em;
+	padding: .5em;
+}
+.comment-body blockquote p:last-child {
+	margin: 0;
+}
+
+
+/* 1.3.2  Comments Meta Data
+-------------------------------------------------- */
+.meta {
+	float: left;
+	width: 100px;
+	text-align: right;
+	margin-bottom: 10px;
+}
+.meta ul li {
+	list-style: none;
+	margin: 0;
+}
+.meta ul + ul li {
+	margin-top: 5px;
+}
+.meta ul li {
+	clear: both;
+	margin: 0;
+	line-height: 1em;
+}
+.meta ul.avatar {
+	position: relative;
+	margin-bottom: 10px;
+}
+.meta ul.avatar .gicon {
+	overflow: hidden;
+	width: 50px;
+	float: right;
+}
+.meta ul.avatar img {
+	display: block;
+}
+.meta .icon {
+	display: block;
+	width: 50px;
+	text-align: center;
+	float: right;
+	padding: 4px 0;
+	font-weight: normal;
+	line-height: 1em;
+	font-size: 0.85em;
+	color: #fff;
+	background-color: #ed5694;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+}
+.meta ul.avatar .position a {
+	position: absolute;
+	top: 0;
+	right: 0;
+	display: block;
+	overflow: hidden;
+	text-indent: -2000px;
+	text-align: left;
+	width: 50px;
+	font-size: 2.5em;
+	line-height: 50px;
+	z-index: 1;
+}
+.meta ul.avatar .position a:hover,
+div:target .meta ul.avatar .position a {
+	text-indent: 0;
+	font-weight: bold;
+	text-align: center;
+}
+.comment .meta .date {
+	font-size: 0.85em;
+}
+.comment .comment-options.admin {
+	position: absolute;
+	top: 10px;
+	right: 0;
+	padding-top: 1px;
+}
+.comment .comment-options.hide {
+	display: none;
+}
+.meta .comment-options li {
+	display: inline;
+}
+.meta .comment-options li .confirm {
+	margin-right: 6px;
+}
+.comment .member {
+	font-weight: 700;
+}
+.comment .attachment {
+	width: 330px;
+}
+.comment .attachment p {
+	margin: 0;
+	padding: 2px 5px;
+}
+.comment .attachment ul {
+	margin: 5px 30px;
+}
+
+
+/* 1.3.3  Comments Controls
+-------------------------------------------------- */
+.comment .comment-options a.button {
+	float: right;
+	background-color: #eee;
+	background-color: rgba(0, 0, 0, 0.1);
+	padding: 4px 6px;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+}
+
+
+/* 1.3.4  Comments Admin Controls
+-------------------------------------------------- */
+.comment .comment-options.admin {
+	background-color: #eee;
+	background-color: rgba(0, 0, 0, 0.1);
+	padding: 6px;
+	border-radius: 11px;
+	-moz-border-radius: 11px;
+	-webkit-border-radius: 11px;
+}
+.comment-options.admin a.button {
+	float: right;
+	padding: 0 1em;
+	line-height: 2em;
+	height: 2em;
+	text-decoration: none;
+	text-shadow: none;
+	cursor: pointer;
+	background-color: #000;
+	color: #fff;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
+.comment-options.admin a.button:hover {
+	background-color: #2a8cc8;
+}
+.comment-options.admin a.confirm:hover {
+	background-color: #a50d0d;
+}
+.comment-options.admin a.button:active {
+	background-color: #fff;
+	color: #000;
+}
+
+
+
+/*
+--------------------------------------------------
+1.4  Forms
+-------------------------------------------------- */
+
+
+aside form {
+	margin: 10px;
+}
+
+
+/* 1.4.2  Comment Form
+-------------------------------------------------- */
+#comment-form {
+	padding-top: 12px;
+}
+#comment-form label{
+	display: block;
+	margin-bottom: 12px;
+	color: #ed5694;
+	font-size: 1.2em;
+}
+#submission #cancel {
+	margin-left: 12px;
+}
+
+
+/* 1.4.3  Search Form
+-------------------------------------------------- */
+#search input {
+	margin-bottom: 8px;
+}
+
+
+/* 1.4.4  New Discussion Form
+-------------------------------------------------- */
+.discussion-topic label {
+	display: block;
+}
+.discussion-topic input {
+	width: 99%;
+}
+
+
+/* 1.4.5  Code Block
+-------------------------------------------------- */
+pre {
+	white-space: pre;
+}
+.code-block {
+	margin-bottom: 18px;
+}
+.code-block pre {
+	margin-bottom: 4px;
+}
+
+
+/*
+--------------------------------------------------
+1.5  Syntax Highlighting
+-------------------------------------------------- */
+.content pre.element {
+	color: #900;
+}
+pre .cdata, pre .text {
+	color: #000;
+}
+pre .attribute {
+	color: #008203;
+}
+pre .attribute-data {
+	color: #006080;
+}
+pre .comment {
+	color: #216623;
+	border: none !important;
+}
+pre .doctype {
+	color: #999;
+}
+
+
+
+
+/*
+--------------------------------------------------
+2  Media Queries
+-------------------------------------------------- */
+
+@media (max-width: 960px) and (min-width: 768px) {
+
+	.content {
+		padding: 18px 0;
+		margin-right: 258px;
+	}
+
+	#discussion-form .content {
+		margin-right: 0;
+	}
+	#discussion-form #wmd-editor.wmd-panel {
+		width: 645px;
+	}
+	#discussion-form #wmd-button-bar {
+		width: 645px;
+	}
+	#discussion-form #wmd-input {
+		width: 635px;
+	}
+	#discussion-form #wmd-button-bar #wmd-help-button {
+		display: block;
+	}
+
+}
+
+@media (max-width: 960px) {
+
+	.meta {
+		float: none;
+		text-align: left;
+		width: auto;
+		overflow: hidden;
+		border-bottom: 1px solid #eee;
+		margin-bottom: 24px;
+	}
+	.meta ul.avatar {
+		float: left;
+		margin-right: 12px;
+		margin-bottom: 20px;
+	}
+	.meta ul.avatar .gicon {
+		float: left;
+	}
+	.meta ul + ul li {
+		margin-top: 0;
+		margin-bottom: 5px;
+	}
+	.meta ul li {
+		clear: none;
+	}
+	.meta .icon {
+		float: left;
+	}
+	.comment-body {
+		margin-left: 0;
+	}
+
+}
+
+@media only screen and (max-width: 479px) {
+
+	form #submission #cancel {
+		display: block;
+		margin-left: 0;
+		margin-top: 9px;
+	}
+
+}

@@ -1,0 +1,466 @@
+/*
+==================================================
+Organization People
+==================================================
+file:     people.css
+version:  1.0
+date:     25 November 2010
+author:   Author Name
+agency:   Organization
+url:      http://example.com
+--------------------------------------------------
+
+
+--------------------------------------------------
+Table of Contents
+--------------------------------------------------
+
+
+      PEOPLE STYLES
+      --------------------------------------------
+
+         1  PEOPLE
+             1.1  People
+                   1.2.1  Person
+                   1.2.2  Details
+             1.2  Avatars
+         2  PROFILES
+             2.1  Gallery Navigation
+             2.2  Personal Profile
+                   2.2.1  Profile
+                   2.2.2  Profile Photo
+                   2.2.3  Profile Details
+                   2.2.4  Profile Info
+                   2.2.5  Online Profile
+                   2.2.6  Recently Online
+             2.3  Media Queries
+                   2.3.1  Desktop Screens
+                   2.3.2  Medium Screens
+                   2.3.3  Small Screens
+
+
+--------------------------------------------------
+*/
+
+
+
+
+
+/*
+==================================================
+
+1  PEOPLE
+
+==================================================
+*/
+
+
+/*
+--------------------------------------------------
+1.1  People
+-------------------------------------------------- */
+
+
+/* 1.1.1  Person
+-------------------------------------------------- */
+.person {
+	margin: 0;
+	list-style: none;
+	padding-bottom: 12px;
+	overflow: hidden;
+}
+
+
+/* 1.1.2  Details
+-------------------------------------------------- */
+.person .details {
+	margin-left: 107px;
+}
+.person .details h5 {
+	line-height: 1em;
+	margin-bottom: 4px;
+}
+.person .details p {
+	margin-bottom: 0;
+}
+
+
+/*
+--------------------------------------------------
+1.2  Avatars
+-------------------------------------------------- */
+.avatar {
+	float: left;
+	width: 95px;
+	height: 95px;
+	overflow: hidden;
+}
+.avatar:hover img {
+	margin-top: -95px;
+}
+
+
+
+section.main {
+	width: auto;
+	margin: 0;
+}
+
+
+
+
+/*
+==================================================
+
+2  PROFILES
+
+==================================================
+*/
+
+
+/*
+--------------------------------------------------
+2.1  Gallery Navigation
+-------------------------------------------------- */
+.gallery-nav {
+	display: block;
+	height: 27px;
+}
+.gallery-nav li {
+	float: left;
+	list-style: none;
+	margin: 0;
+}
+.gallery-nav li a {
+	float: left;
+	width: 27px;
+	height: 27px;
+	text-indent: -9999px;
+	background: url(../img/gallery-nav.gif) no-repeat;
+}
+.gallery-nav li a {
+	outline: none;
+}
+.gallery-nav li.prev {
+	margin-right: 6px;
+}
+.gallery-nav li.prev a:hover {
+	background-position: 0 -27px;
+}
+.gallery-nav li.prev a.disabled {
+	background-position: 0 -54px;
+	cursor: default;
+}
+.gallery-nav li.thumbs {
+	margin-right: 6px;
+}
+.gallery-nav li.thumbs a {
+	background-position: -33px 0;
+}
+.gallery-nav li.thumbs a:hover {
+	background-position: -33px -27px;
+}
+.gallery-nav li.next a {
+	background-position: -66px 0;
+}
+.gallery-nav li.next a:hover {
+	background-position: -66px -27px;
+}
+.gallery-nav li.next a.disabled {
+	background-position: -66px -54px;
+	cursor: default;
+}
+
+
+/*
+--------------------------------------------------
+2.2  Personal Profile
+-------------------------------------------------- */
+
+
+/* 2.2.1  Profile
+-------------------------------------------------- */
+.profile {
+	padding: 0;
+}
+
+
+/* 2.2.2  Profile Photo
+-------------------------------------------------- */
+.profile .photo {
+	display: block;
+	margin-bottom: 24px;
+	padding: 6px;
+	-moz-box-shadow: 0px 1px 4px #999;
+	-webkit-box-shadow: 0px 1px 4px #999;
+	box-shadow: 0px 1px 4px #999;
+}
+
+.profile .photo img {
+	max-width: 100%;
+}
+
+
+/* 2.2.3  Profile Details
+-------------------------------------------------- */
+.profile .details {
+	margin-left: 217px;
+	font-size: 12px;
+	color: #494949;
+	line-height: 18px;
+}
+.profile .details h2 {
+	font-size: 25px;
+	color: #3a3a3a;
+}
+.profile .details h3 {
+	font-size: 14px;
+	color: #ed5694;
+}
+.profile .details p {
+	font-size: 12px;
+	color: #494949;
+	line-height: 18px;
+}
+.profile .details a {
+	color: #1182c3;
+	text-decoration: none;
+}
+
+
+/* 2.2.4  Profile Info
+-------------------------------------------------- */
+.profile-info {
+	clear: both;
+	margin-top: 12px;
+	overflow: hidden;
+}
+
+
+/* 2.2.5  Online Profile
+-------------------------------------------------- */
+.profile-online h3 {
+	font-size: 22px;
+	color: #ed5694;
+}
+.profile-online p {
+	color: #787878;
+}
+.profile-online p.want-more {
+	font-size: 12px;
+	font-weight: bold;
+	color: #ed5694;
+	margin-top: 50px;
+	line-height: 1.4em;
+}
+.profile-online p.want-more a {
+	color: #1182c3;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+
+/* 2.2.6  Recently Online
+-------------------------------------------------- */
+.recently {
+	border-top: 1px solid #eee;
+	padding-top: 24px;
+}
+#recent-projects {
+	height: 195px;
+	overflow: hidden;
+}
+.recent h3 {
+	font-size: 14px;
+	color: #ed5694;
+	padding-top: 6px;
+	height: 23px;
+	margin-bottom: 14px;
+}
+.recent li {
+	list-style: none;
+	margin-left: 0;
+}
+.recent p,
+.recent li {
+	margin-top: 0;
+	margin-bottom: 12px;
+	font-size: 12px;
+	color: #333333;
+	line-height: 20px;
+}
+.recent p.twitter {
+	text-align: right;
+	font-size: 10px;
+	color: #959595;
+}
+.recent span.date {
+	font-size: 10px;
+	color: #959595;
+}
+.recent a.title {
+	font-weight: bold;
+}
+.recent a.more-link {
+	color: #ed5694;
+}
+
+
+/*
+--------------------------------------------------
+2.3  Media Queries
+-------------------------------------------------- */
+
+
+/* 2.3.1  Desktop Screens
+-------------------------------------------------- */
+@media (min-width: 960px) {
+
+	.people {
+		-moz-column-count: 3;
+		-moz-column-gap: 24px;
+		-moz-column-rule: 1px solid #ddd;
+		-webkit-column-count: 3;
+		-webkit-column-gap: 24px;
+		-webkit-column-rule: 1px solid #ddd;
+		column-count: 3;
+		column-gap: 24px;
+		column-rule: 1px solid #ddd;
+	}
+
+	.profile .photo {
+		float: left;
+		margin-right: 24px;
+	}
+
+	.profile-online {
+		float: left;
+		width: 180px;
+		padding-top: 24px;
+	}
+
+	.recent {
+		float: left;
+		width: 200px;
+		padding-left: 18px;
+		margin-left: 18px;
+		border-left: 1px solid #eee;
+		min-height: 400px;
+	}
+
+}
+
+
+/* 2.3.2  Medium Screens
+-------------------------------------------------- */
+@media (max-width: 959px) and (min-width: 768px) {
+
+	.people {
+		-moz-column-count: 2;
+		-moz-column-gap: 24px;
+		-moz-column-rule: 1px solid #ddd;
+		-webkit-column-count: 2;
+		-webkit-column-gap: 24px;
+		-webkit-column-rule: 1px solid #ddd;
+		column-count: 2;
+		column-gap: 24px;
+		column-rule: 1px solid #ddd;
+	}
+
+	.profile .photo {
+		float: none;
+		display: inline-block;
+	}
+
+	.profile .details {
+		margin-left: 217px;
+	}
+
+	.profile-online {
+		float: left;
+		width: 180px;
+		padding-top: 24px;
+	}
+
+	.recently {
+		margin-left: 217px;
+	}
+
+	#recent-articles,
+	#recent-projects {
+		margin-top: 24px;
+		padding-top: 24px;
+		border-top: 1px solid #eee;
+	}
+
+}
+
+
+/* 2.3.3  Small Screens
+-------------------------------------------------- */
+@media only screen and (max-width: 767px) {
+
+
+	/* People
+	-------------------------------------------------- */
+	.people {
+		border-top: 1px solid #ddd;
+	}
+
+
+	/* Person
+	-------------------------------------------------- */
+	.person {
+		margin: 0;
+		list-style: none;
+		overflow: hidden;
+		padding: 12px 0;
+		border-bottom: 1px solid #ddd;
+	}
+
+
+	/* Details
+	-------------------------------------------------- */
+	.person .details {
+		margin-left: 72px;
+	}
+	.person .details h5 {
+		line-height: 1em;
+		margin-bottom: 4px;
+	}
+	.person .details p {
+		margin-bottom: 0;
+	}
+
+
+	/* Avatars
+	-------------------------------------------------- */
+	.avatar {
+		float: left;
+		width: 60px;
+		height: 60px;
+		overflow: hidden;
+		position: relative;
+	}
+	.avatar img {
+		max-width: 100%;
+	}
+	.avatar:hover img {
+		margin-top: -60px;
+	}
+
+
+	/* Profile
+	-------------------------------------------------- */
+	.profile .details {
+		margin-left: 0;
+	}
+
+	#recent-articles,
+	#recent-projects {
+		margin-top: 24px;
+		padding-top: 24px;
+		border-top: 1px solid #eee;
+	}
+
+}
