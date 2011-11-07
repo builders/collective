@@ -29,7 +29,7 @@ CREATE TABLE `tbl_cache` (
   PRIMARY KEY (`id`),
   KEY `hash` (`hash`),
   KEY `expiry` (`expiry`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- *** STRUCTURE: `tbl_entries` ***
 DROP TABLE IF EXISTS `tbl_entries`;
@@ -249,7 +249,7 @@ CREATE TABLE `tbl_fields_select` (
   `static_options` text,
   `dynamic_options` int(11) unsigned DEFAULT NULL,
   `show_association` enum('yes','no') NOT NULL DEFAULT 'yes',
-  `sort_options` enum('yes','no') CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL DEFAULT 'no',
+  `sort_options` enum('yes','no') NOT NULL DEFAULT 'no',
   PRIMARY KEY (`id`),
   KEY `field_id` (`field_id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8;

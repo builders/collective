@@ -195,7 +195,7 @@
 		$conf['database']['runtime_character_set_alter'] = '1';
 		$conf['database']['query_caching'] = 'default';
 		$conf['public']['display_event_xml_in_source'] = 'no';
-		$conf['general']['sitename'] = 'Organization';
+		$conf['general']['sitename'] = 'Builders Collective';
 		$conf['region']['time_format'] = 'g:i a';
 		$conf['region']['date_format'] = 'd F Y';
 		$conf['region']['datetime_separator'] = ' ';
