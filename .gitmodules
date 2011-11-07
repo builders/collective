@@ -85,3 +85,6 @@
 [submodule "extensions/uniqueuploadfield"]
 	path = extensions/uniqueuploadfield
 	url = git://github.com/michael-e/uniqueuploadfield.git
+[submodule "workspace"]
+	path = workspace
+	url = git://github.com/builders/collective.git
